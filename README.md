@@ -59,3 +59,7 @@
 - 勉強に疲れた時の拠り所を一つでも多く持っておきたい。
 - giveをする仲間を増やしたい。
 - 共通の趣味を持った仲間を探して友達を作りたい。
+
+### ER図
+
+https://drive.google.com/file/d/1HSxflgpMoYemDhefv_lmAKizdTj6YwxF/view?usp=sharing
