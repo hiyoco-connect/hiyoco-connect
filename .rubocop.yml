@@ -44,7 +44,11 @@ Metrics/LineLength:
   IgnoredPatterns: ['\A#']
   Exclude:
     - "db/migrate/*.rb"
-
+Layout/LineLength:
+  Max: 105
+  IgnoredPatterns: ['\A#']
+  Exclude:
+    - "db/migrate/*.rb"
 # メソッドの行数を20行までにする
 Metrics/MethodLength:
   CountComments: false
@@ -52,3 +56,5 @@ Metrics/MethodLength:
 # ABC sizeは緩めにする
 Metrics/AbcSize:
   Max: 30 # default 15
+Metrics/BlockLength:
+  Max: 35
