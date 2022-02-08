@@ -1,19 +1,4 @@
-# PostgreSQL. Versions 9.3 and up are supported.
-#
-# Install the pg driver:
-#   gem install pg
-# On macOS with Homebrew:
-#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-# On macOS with MacPorts:
-#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-# On Windows:
-#   gem install pg
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
-#
-# Configure Using Gemfile
-# gem 'pg'
-#
+
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -23,13 +8,13 @@ default: &default
 
 development:
   <<: *default
-  database: runteq_profile_development
+  database: hiyoco_connect_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: runteq_profile
+  #username: hiyoco_connect
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +42,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: runteq_profile_test
+  database: hiyoco_connect_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +66,6 @@ test:
 #
 production:
   <<: *default
-  database: runteq_profile_production
-  username: runteq_profile
-  password: <%= ENV['RUNTEQ_PROFILE_DATABASE_PASSWORD'] %>
+  database: hiyoco_connect_production
+  username: hiyoco_connect
+  password: <%= ENV['HIYOCO_CONNECT_DATABASE_PASSWORD'] %>
