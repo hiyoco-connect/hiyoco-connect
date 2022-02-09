@@ -1,0 +1,56 @@
+# == Schema Information
+#
+# Table name: profiles
+#
+#  id                :bigint           not null, primary key
+#  avatar            :string
+#  birthplace_code   :integer
+#  blood_type        :integer          default(0), not null
+#  date_of_birth     :date
+#  gender            :integer          default(0), not null
+#  grade             :integer          not null
+#  hobby             :text             not null
+#  living_place_code :integer
+#  name              :string           not null
+#  self_introduce    :text             not null
+#  siblings_relation :integer          default(0), not null
+#  team_dev_will     :integer          default(0), not null
+#  times_name        :string
+#  twitter_account   :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
+one:
+  user: one
+  name: MyString
+  grade: 1
+  gender: 1
+  birthplace: 1
+  living_place: 1
+  date_of_birth: 2022-02-09
+  blood_type: 1
+  siblings_relation: 1
+  hobby: MyText
+  times_name: MyString
+  team_dev_will: 1
+  twitter_account: MyString
+  self_introduce: MyText
+  avatar: MyString
+
+two:
+  user: two
+  name: MyString
+  grade: 1
+  gender: 1
+  birthplace: 1
+  living_place: 1
+  date_of_birth: 2022-02-09
+  blood_type: 1
+  siblings_relation: 1
+  hobby: MyText
+  times_name: MyString
+  team_dev_will: 1
+  twitter_account: MyString
+  self_introduce: MyText
+  avatar: MyString
