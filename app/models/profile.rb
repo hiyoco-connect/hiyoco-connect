@@ -22,4 +22,9 @@
 #
 class Profile < ApplicationRecord
   belongs_to :user
+
+  validate :name, presence: true,  length: { maximum: 255 }
+  validate :grade, presence: true
+  validate :hobby, presence: true, length: { maximum: 65_535 }
+  validate :self_introduce, presence: true, length: { maximum: 65_535 }
 end
