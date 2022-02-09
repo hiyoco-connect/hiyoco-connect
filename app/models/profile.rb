@@ -27,4 +27,9 @@ class Profile < ApplicationRecord
   validate :grade, presence: true
   validate :hobby, presence: true, length: { maximum: 65_535 }
   validate :self_introduce, presence: true, length: { maximum: 65_535 }
+
+  enum gender: { unanswered: 0, male: 1, female: 2, others: 3 }
+  enum blood_type: { unanswered: 0, A: 1, B: 2, O: 3, AB: 4 }
+  enum siblings_relation: { unanswered: 0, oldest: 1, middle: 2, youngest: 3, only_child: 4 }
+  enum team_dev_will: { unanswered: 0, not_available: 1, want_to_try: 2, interested_but: 3 }
 end
