@@ -1,4 +1,65 @@
 <div>
-    <h1>トップページ</h1>
-    <button type="button" class="btn btn-secondary">secondary</button>
+  <div class="bg-primary p-3 p-sm-5 mb-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-5 text-end">
+          <%= image_tag 'hiyoco.png', size: '254x311'%>
+        </div>
+        <div class="col-7 text-center">
+          <h1 class="display-4 mb-0"><%= t 'defaults.app_title' %></h1>
+          <h5>RUTEQ生向けのプロフィール集約アプリ</h5>
+          <a class="btn btn-success mt-2" href="#" role="button">ログインする</a>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row text-center mt-5">
+    <h1>〜 ひよコネとは？ 〜</h1>
+    <p class="lead mt-2">ひよこコネクトはRUNTEQ生のための<br>プロフィール集約サービスです。</p>
+    <p class="lead mt-2">プロフィール集約を通じて<br>駆け出しエンジニア(＝ひよっこ)<br>であるRUNTEQ生同士を繋げたい！<br>という想いから生まれました</p>
+    <p class="lead mt-2">気になるプロフィールを見つけたら、<br>ぜひDiscordやTimesで声をかけてみてください！</p>
+  </div>
+
+  <div class="row text-center mt-5">
+    <h1 class="mb-0">〜 使い方 〜</h1>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-5 text-end">
+      <%= image_tag 'regist_profile.png', size: '240x240'%>
+    </div>
+    <div class="col-7">
+      <h2 class="mb-0">プロフィールを登録</h1>
+      <p>自分のプロフィールを登録しましょう！</p>
+    </div>
+  </div>
+
+  <div class="row align-items-center">
+    <div class="col-5 text-end">
+      <%= image_tag 'look_profile.png', size: '240x240'%>
+    </div>
+    <div class="col-7">
+      <h2 class="mb-0">プロフィールを閲覧・検索</h1>
+      <p>皆のプロフィールを閲覧してみましょう！<br>検索機能で絞り込みを行うこともできますよ。</p>
+    </div>
+  </div>
+
+  <div class="row align-items-center">
+    <div class="col-5 text-end">
+      <%= image_tag 'matching.png', size: '240x240'%>
+    </div>
+    <div class="col-7">
+      <h2 class="mb-0">いいね！でマッチング</h1>
+      <p>気になるプロフィールには、いいね！をしましょう。<br>相互にいいね！したユーザーは、いいね！一覧ページ<br>に「マッチングしたユーザー」として表示されます。</p>
+    </div>
+  </div>
+
+  <div class="row text-center mb-5">
+    <div class="col-12">
+      <a class="btn btn-success" href="#" role="button">ログインする</a>
+    </div>
+  </div>
 </div>
