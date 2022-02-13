@@ -8,6 +8,12 @@ Rails.application.config.sorcery.submodules = [:external]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
+  config.external_providers = [:github]
+  config.github.key = Rails.application.credentials.dig(:github, :key)
+  config.github.secret = Rails.application.credentials.dig(:github, :secret)
+  config.github.callback_url = Rails.application.credentials.dig(:github, :callback_url)
+  config.github.user_info_mapping = {email: "email", name: "login", remote_avatar_url: "avatar_url"}
+  config.github.scope = "user:email"
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.
@@ -226,7 +232,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.line.bot_prompt = "normal"
   # config.line.user_info_mapping = {name: 'displayName'}
 
-  
+
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
   # config.discord.key = "xxxxxx"
@@ -243,6 +249,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.battlenet.scope = "openid"
   # --- user config ---
   config.user_config do |user|
+    user.authentications_class = Authentication
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`
