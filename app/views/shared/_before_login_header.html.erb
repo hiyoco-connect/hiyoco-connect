@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <%= link_to "ログイン", auth_at_provider_path(provider: :github), class: "nav-link active text-dark" %>
+          <%= link_to (t 'defaults.login'), auth_at_provider_path(provider: :github), class: "nav-link active text-dark" %>
         </li>
       </ul>
     </div>

@@ -3,6 +3,11 @@ ja:
     app_title: 'ひよこコネクト'
     login: 'ログイン'
     logout: 'ログアウト'
+  oauths:
+    callback:
+      to_login: 'ログインする'
+      success: 'GitHubアカウントでログインしました'
+      fail: 'GitHubアカウントでログインに失敗しました'
   user_sessions:
     destroy:
       success: 'ログアウトしました'
