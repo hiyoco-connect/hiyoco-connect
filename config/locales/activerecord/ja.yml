@@ -1,0 +1,60 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      profile: 'プロフィール'
+      portfolio: 'ポートフォリオ'
+    attributes:
+      user:
+        github_name: 'GitHubアカウント名'
+        email: 'メールアドレス'
+        remote_avatar_url: 'GitHubアカウント画像'
+      profile:
+        name: '名前'
+        grade: '期'
+        gender: '性別'
+        birthplace_code: '出身地'
+        living_place_code: '居住地'
+        date_of_birth: '生年月日'
+        blood_type: '血液型'
+        siblings_relation: '兄弟関係'
+        hobby: '趣味'
+        times_name: 'times名'
+        team_dev_will: 'チーム開発希望'
+        twitter_account: 'Twitterアカウント'
+        self_introduce: '自己紹介文'
+        avatar: 'プロフィール画像'
+      portfolio:
+        name: 'ポートフォリオ名'
+        url: 'URL'
+        status: '状況'
+  enums:
+    profile:
+      gender:
+        unanswered: '未回答'
+        male: '男性'
+        female: '女性'
+        others: 'その他'
+      blood_type:
+        unanswered: '未回答'
+        A: 'A型'
+        B: 'B型'
+        O: 'O型'
+        AB: 'AB型'
+      siblings_relation:
+        unanswered: '未回答'
+        oldest: '一番上'
+        middle: '真ん中'
+        youngest: '末っ子'
+        have_no_siblings: '一人っ子'
+      team_dev_will:
+        unanswered: '未回答'
+        not_available: '都合がつかない'
+        would_love_to: 'やってみたい!'
+        interested_but: '興味はあるけど踏ん切りがつかない'
+    portfolio:
+      status:
+        untouched: '未着手'
+        ongoing: '絶賛作成中!乞うご期待!(MVPリリース含む)'
+        released: 'リリース済み(ドヤァ)'
+
