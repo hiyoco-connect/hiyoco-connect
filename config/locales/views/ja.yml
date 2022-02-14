@@ -3,3 +3,6 @@ ja:
     app_title: 'ひよこコネクト'
     login: 'ログイン'
     logout: 'ログアウト'
+  user_sessions:
+    destroy:
+      success: 'ログアウトしました'

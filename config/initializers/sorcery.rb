@@ -12,7 +12,7 @@ Rails.application.config.sorcery.configure do |config|
   config.github.key = Rails.application.credentials.dig(:github, :key)
   config.github.secret = Rails.application.credentials.dig(:github, :secret)
   config.github.callback_url = Rails.application.credentials.dig(:github, :callback_url)
-  config.github.user_info_mapping = {email: "email", name: "login", remote_avatar_url: "avatar_url"}
+  config.github.user_info_mapping = {email: "email", github_name: "name", remote_avatar_url: "avatar_url"}
   config.github.scope = "user:email"
   # -- core --
   # What controller action to call for non-authenticated users. You can also
@@ -249,7 +249,6 @@ Rails.application.config.sorcery.configure do |config|
   # config.battlenet.scope = "openid"
   # --- user config ---
   config.user_config do |user|
-    user.authentications_class = Authentication
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`
@@ -550,7 +549,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`
