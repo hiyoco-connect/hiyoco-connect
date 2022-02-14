@@ -106,6 +106,8 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     debug_inspector (1.1.0)
+    enum_help (0.0.18)
+      activesupport (>= 3.0.0)
     erubi (1.10.0)
     erubis (2.7.0)
     faraday (1.9.3)
@@ -336,6 +338,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   carrierwave
+  enum_help
   jbuilder (~> 2.7)
   jp_prefecture
   listen (~> 3.3)
