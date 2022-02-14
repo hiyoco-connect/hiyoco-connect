@@ -8,7 +8,10 @@
         <div class="col-7 text-center">
           <h1 class="display-4 mb-0"><%= t 'defaults.app_title' %></h1>
           <h5>RUTEQ生向けのプロフィール集約アプリ</h5>
-          <a class="btn btn-success mt-2" href="#" role="button">ログインする</a>
+          <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-success mt-2" do %>
+            <i class="fab fa-github mr-2"></i>
+            <span><%= (t 'oauths.callback.to_login') %></span>
+          <% end %>
         </div>
       </div>
 
@@ -59,7 +62,10 @@
 
   <div class="row text-center mb-5">
     <div class="col-12">
-      <a class="btn btn-success" href="#" role="button">ログインする</a>
+      <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-success mt-2" do %>
+            <i class="fab fa-github mr-2"></i>
+            <span>><%= (t 'oauths.callback.to_login') %></span>
+          <% end %>
     </div>
   </div>
 </div>
