@@ -19,9 +19,19 @@
 #  twitter_account   :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  user_id           :bigint
+#
+# Indexes
+#
+#  index_profiles_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
 #
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :portfolios, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 
   validate :name, presence: true, length: { maximum: 255 }

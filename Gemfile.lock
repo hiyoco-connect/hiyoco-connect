@@ -106,6 +106,8 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     debug_inspector (1.1.0)
+    enum_help (0.0.18)
+      activesupport (>= 3.0.0)
     erubi (1.10.0)
     erubis (2.7.0)
     faraday (1.9.3)
@@ -239,6 +241,7 @@ GEM
     regexp_parser (2.2.0)
     require_all (3.0.0)
     rexml (3.2.5)
+    rinku (2.0.6)
     rubocop (1.25.1)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -336,6 +339,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   carrierwave
+  enum_help
   jbuilder (~> 2.7)
   jp_prefecture
   listen (~> 3.3)
@@ -346,6 +350,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.4)
   rails-i18n (~> 6.0.0)
   rails_best_practices
+  rinku
   rubocop
   rubocop-performance
   rubocop-rails
