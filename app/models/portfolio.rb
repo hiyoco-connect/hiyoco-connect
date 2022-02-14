@@ -21,5 +21,8 @@
 class Portfolio < ApplicationRecord
   belongs_to :profile
 
+  validate :name, presence: true, length: { maximum: 255 }
+  validate :url, length: { maximum: 255 }
+
   enum status: { untouched: 0, ongoing: 1, released: 2 }
 end
