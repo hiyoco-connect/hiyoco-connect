@@ -13,7 +13,7 @@
 #
 #  index_authentications_on_provider_and_uid  (provider,uid)
 #
-require "test_helper"
+require 'test_helper'
 
 class AuthenticationTest < ActiveSupport::TestCase
   # test "the truth" do

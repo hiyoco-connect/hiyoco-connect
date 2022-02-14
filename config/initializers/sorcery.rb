@@ -12,8 +12,9 @@ Rails.application.config.sorcery.configure do |config|
   config.github.key = Rails.application.credentials.dig(:github, :key)
   config.github.secret = Rails.application.credentials.dig(:github, :secret)
   config.github.callback_url = Rails.application.credentials.dig(:github, :callback_url)
-  config.github.user_info_mapping = {email: "email", github_name: "name", remote_avatar_url: "avatar_url"}
-  config.github.scope = "user:email"
+  config.github.user_info_mapping = { email: 'email', github_name: 'name',
+                                      remote_avatar_url: 'avatar_url' }
+  config.github.scope = 'user:email'
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.
@@ -231,7 +232,6 @@ Rails.application.config.sorcery.configure do |config|
   # config.line.scope = "profile"
   # config.line.bot_prompt = "normal"
   # config.line.user_info_mapping = {name: 'displayName'}
-
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
@@ -569,5 +569,5 @@ Rails.application.config.sorcery.configure do |config|
 
   # This line must come after the 'user config' block.
   # Define which model authenticates with sorcery.
-  config.user_class = "User"
+  config.user_class = 'User'
 end

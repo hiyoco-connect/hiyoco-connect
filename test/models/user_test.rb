@@ -15,7 +15,7 @@
 #
 #  index_users_on_email  (email) UNIQUE
 #
-require "test_helper"
+require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   # test "the truth" do

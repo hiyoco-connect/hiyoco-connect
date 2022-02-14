@@ -15,7 +15,7 @@ class OauthsController < ApplicationController
         reset_session
         auto_login(@user)
         redirect_to root_path, success: t('.success')
-      rescue
+      rescue StandardError
         redirect_to root_path, alert: t('.fail')
       end
     end
