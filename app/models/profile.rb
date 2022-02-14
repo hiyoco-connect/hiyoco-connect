@@ -31,6 +31,7 @@
 #
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :portfolios
   mount_uploader :avatar, AvatarUploader
 
   validate :name, presence: true, length: { maximum: 255 }
