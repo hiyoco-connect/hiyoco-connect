@@ -24,6 +24,25 @@ ActiveRecord::Schema.define(version: 2022_02_11_052017) do
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "grade", null: false
+    t.integer "gender", default: 0, null: false
+    t.integer "birthplace_code"
+    t.integer "living_place_code"
+    t.date "date_of_birth"
+    t.integer "blood_type", default: 0, null: false
+    t.integer "siblings_relation", default: 0, null: false
+    t.text "hobby", null: false
+    t.string "times_name"
+    t.integer "team_dev_will", default: 0, null: false
+    t.string "twitter_account"
+    t.text "self_introduce", null: false
+    t.string "avatar"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "github_name"
     t.string "email", null: false

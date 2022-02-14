@@ -1,0 +1,5 @@
+ja:
+  defaults:
+    app_title: 'ひよこコネクト'
+    login: 'ログイン'
+    logout: 'ログアウト'
