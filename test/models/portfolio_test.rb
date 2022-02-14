@@ -18,7 +18,7 @@
 #
 #  fk_rails_...  (profile_id => profiles.id)
 #
-require "test_helper"
+require 'test_helper'
 
 class PortfolioTest < ActiveSupport::TestCase
   # test "the truth" do
