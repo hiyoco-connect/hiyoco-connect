@@ -16,9 +16,10 @@ class ProfilesController < ApplicationController
     @profile = current_user.build_profile(profile_params)
 
     if @profile.save
-      redirect_to @profile
+      redirect_to @profile, success: '作成しました'
     else
-      @profile.errors
+      flash.now['danger'] = '作成に失敗しました'
+      render :new
     end
   end
 
