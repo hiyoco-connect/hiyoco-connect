@@ -1,0 +1,78 @@
+<div class="container">
+      <%= form_with( model: @profile, builder: ProfileFormHelper ,local: true) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="form-group">
+          <%= f.label :self_introduce %>
+          <%= f.text_area :self_introduce, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :birthplace %>
+          <%=f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name%>
+        </div>
+        <div class="form-group" >
+          <%= f.label :living_place %>
+          <%=f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name %>
+        </div>
+        <div class="form-group">
+          <%= f.label :gender %>
+          <%= f.enum_select :gender%>
+        </div>
+        <div class="form-group">
+          <%= f.label :date_of_birth %>
+          <%= f.date_field :date_of_birth, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :grade %>
+          <%= f.text_field :grade, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :blood_type %>
+          <%= f.enum_select :blood_type %>
+        </div>
+        <div class="form-group">
+          <%= f.label :siblings_relation%>
+          <%= f.enum_select :siblings_relation%>
+        </div>
+        <div class="form-group">
+          <%= f.label :hobby %>
+          <%= f.text_field :hobby, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :times_name %>
+          <%= f.text_field :times_name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :team_dev_will %>
+          <%= f.enum_select :team_dev_will %>
+        </div>
+        <div class="form-group">
+          <%= f.label :twitter_account %>
+          <%= f.text_field :twitter_account, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+        <%= f.label :avatar %>
+          <%= f.file_field :avatar, class: 'form-control' %>
+        </div>
+          <%= f.fields_for :portfolios do |portfolio_form| %>
+          <%= portfolio_form.label :profile_id  %>
+          <%= portfolio_form.hidden_field :profile_id , value: @profile.id %>
+      <div class="form-group">
+          <%= portfolio_form.label :name  %>
+          <%= portfolio_form.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= portfolio_form.label :url %>
+          <%= portfolio_form.text_field :url, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= portfolio_form.label :status %>
+<%= portfolio_form.enum_select :status %>
+        </div> 
+  <% end %>           
+        <%= f.submit "送信", class: 'mt-3 btn btn-warning' %> 
+      <%end%>
+    </div>
