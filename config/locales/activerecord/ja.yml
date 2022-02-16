@@ -25,6 +25,7 @@ ja:
         self_introduce: '自己紹介文'
         avatar: 'プロフィール画像'
       portfolio:
+        portfolio_id: 'ポートフォリオ'
         name: 'ポートフォリオ名'
         url: 'URL'
         status: '状況'
