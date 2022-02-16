@@ -1,5 +1,5 @@
 <div class="container">
-      <%= form_with( model: @profile, builder: ProfileFormHelper ,local: true) do |f| %>
+      <%= form_with( model: @profile, builder: ProfilesHelper::ProfileFormHelper ,local: true) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
           <%= f.label :self_introduce %>
