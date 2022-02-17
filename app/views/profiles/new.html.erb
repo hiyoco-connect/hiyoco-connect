@@ -88,14 +88,10 @@
         </div>
       </div>
       <%= f.fields_for :portfolios do |portfolio_form| %>
-      <div class="mb-3 row">
-        <div class="d-flex justify-content-center">
-          <%= portfolio_form.label :portfolio_id ,class: 'col-sm-2 col-form-label'  %>
-        </div>
-        <div class="col-sm-10">
-          <%= portfolio_form.hidden_field :profile_id , value: @profile.id %>
-        </div>
-      </div>
+      <%= portfolio_form.hidden_field :profile_id , value: @profile.id %> 
+        <p class="mb-3 text-center">
+        <%= Portfolio.model_name.human %>
+        </p>
       <div class="mb-3 row">
         <%= portfolio_form.label :name  ,class: 'col-sm-2 col-form-label' %>
           <div class="col-sm-10">
