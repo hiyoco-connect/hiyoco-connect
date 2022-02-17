@@ -1,118 +1,118 @@
-<div class="container">
+<div class="container form-container my-5">
   <%= form_with( model: @profile, builder: ProfilesHelper::ProfileFormHelper ,local: true) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
       <div class="form-group row">
-         <div class="mb-3 col">
+         <div class="col-md-6 col-md-offset-6 col-form-label">
            <%= f.label :avatar %>
-           <div class="col-sm-10">
-             <%= f.file_field :avatar, class: 'form-control' %>
+           <div class="col-md-6 col-md-offset-3">
+             <%= f.file_field :avatar, class: 'form-control col-md-6 col-md-offset-6 text-input-area' %>
           </div>
         </div>
-      <div class="mb-3 col">
+      <div class="mb-5 col self-introduce">
         <%= f.label :self_introduce %>
-        <div class="col-sm-10">
-          <%= f.text_area :self_introduce, class: 'form-control' %> 
+        <div class="col">
+          <%= f.text_area :self_introduce, class: 'form-control text-input-area self-introduce' %> 
         </div>
       </div>
     </div>
       <div class="mb-3 row">
-        <%= f.label :name ,class: 'col-sm-2 col-form-label'%>
-        <div class="col-sm-10">
-          <%= f.text_field :name, class: 'form-control' %> 
+        <%= f.label :name ,class: 'col-md-6 col-md-offset-6 col-form-label text-align-left'%>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :name, class: 'form-control text-input-area' %> 
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :birthplace,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%=f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name%>
+        <%= f.label :birthplace,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%=f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, {prompt: false}, {class: "form-control text-center text-input-area"} %>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :living_place,class: 'col-sm-2 col-form-label' %>
-          <div class="col-sm-10">
-            <%=f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name %>
+        <%= f.label :living_place,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+          <div class="col-md-6 col-md-offset-3">
+            <%=f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name ,{prompt: false}, {class: "form-control text-center text-input-area"} %>
           </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :gender,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%= f.enum_select :gender%>
+        <%= f.label :gender,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.enum_select :gender,{prompt: ""}, {class: "form-control text-center text-input-area"}%>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :date_of_birth ,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%= f.date_field :date_of_birth, class: 'form-control' %>
+        <%= f.label :date_of_birth ,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.date_field :date_of_birth, class: 'form-control text-input-area' %>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :grade ,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%= f.text_field :grade, class: 'form-control' %>
+        <%= f.label :grade ,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :grade, class: 'form-control text-input-area' %>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :blood_type ,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%= f.select :blood_type , Profile.blood_types_i18n.invert%>
+        <%= f.label :blood_type ,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.enum_select :blood_type ,{prompt: ""}, {class: "form-control text-center text-input-area"}%>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :siblings_relation,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%= f.enum_select :siblings_relation%>
+        <%= f.label :siblings_relation,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.enum_select :siblings_relation ,{prompt: ""}, {class: "form-control text-center text-input-area"}%>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :hobby,class: 'col-sm-2 col-form-label'  %>
-        <div class="col-sm-10">
-          <%= f.text_field :hobby, class: 'form-control' %>
+        <%= f.label :hobby,class: 'col-md-6 col-md-offset-6 col-form-label'  %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :hobby, class: 'form-control text-input-area' %>
       </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :times_name ,class: 'col-sm-2 col-form-label'%>
-        <div class="col-sm-10">
-          <%= f.text_field :times_name, class: 'form-control' %>
+        <%= f.label :times_name ,class: 'col-md-6 col-md-offset-6 col-form-label'%>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :times_name, class: 'form-control text-input-area' %>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :team_dev_will,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%= f.enum_select :team_dev_will %>
+        <%= f.label :team_dev_will,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.enum_select :team_dev_will,{prompt: ""}, {class: "form-control text-center text-input-area"} %>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= f.label :twitter_account,class: 'col-sm-2 col-form-label'  %>
-        <div class="col-sm-10">
-          <%= f.text_field :twitter_account, class: 'form-control' %>
+        <%= f.label :twitter_account,class: 'col-md-6 col-md-offset-6 col-form-label'  %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :twitter_account, class: 'form-control text-input-area' %>
         </div>
       </div>
       <%= f.fields_for :portfolios do |portfolio_form| %>
       <%= portfolio_form.hidden_field :profile_id , value: @profile.id %> 
-        <p class="mb-3 text-center">
+        <p class=" h4 mb-3 text-center">
         <%= Portfolio.model_name.human %>
         </p>
       <div class="mb-3 row">
-        <%= portfolio_form.label :name  ,class: 'col-sm-2 col-form-label' %>
-          <div class="col-sm-10">
-            <%= portfolio_form.text_field :name, class: 'form-control' %>
+        <%= portfolio_form.label :name  ,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+          <div class="col-md-6 col-md-offset-3">
+            <%= portfolio_form.text_field :name, class: 'form-control text-input-area' %>
           </div>
       </div>
       <div class="mb-3 row">
-        <%= portfolio_form.label :url ,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%= portfolio_form.text_field :url, class: 'form-control' %>
+        <%= portfolio_form.label :url ,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= portfolio_form.text_field :url, class: 'form-control text-input-area' %>
         </div>
       </div>
       <div class="mb-3 row">
-        <%= portfolio_form.label :status ,class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-          <%= portfolio_form.enum_select :status %>
+        <%= portfolio_form.label :status ,class: 'col-md-6 col-md-offset-6 col-form-label' %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= portfolio_form.enum_select :status,{prompt: ""}, {class: "form-control text-center text-input-area"} %>
         </div>
       </div> 
         <% end %>           
         <div class="d-flex justify-content-center">
-          <%= f.submit "送信", class: 'mt-3 btn btn-warning ' %> 
+          <%= f.submit "送信", class: 'mt-3 btn btn-warning' %> 
         </div>
       </div>
     <% end %>

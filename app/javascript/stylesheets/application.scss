@@ -9,3 +9,19 @@ body {
 main {
   flex: 1;
 }
+.text-input-area{
+  background-color: $gray-500;
+}
+
+.form-container{
+  text-align: center;
+  margin: 0px 50px;
+}
+
+.self-introduce{
+  height: 200px;
+}
+
+.field_with_errors {
+  display: contents;
+}
