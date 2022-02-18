@@ -3,7 +3,9 @@ class ProfilesController < ApplicationController
 
   def create; end
 
-  def index; end
+  def index
+    @profiles = Profile.all
+  end
 
   def show; end
 
