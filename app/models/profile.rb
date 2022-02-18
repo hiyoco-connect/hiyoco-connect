@@ -32,7 +32,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
   has_many :portfolios, dependent: :destroy
-  accepts_nested_attributes_for :portfolios
+  accepts_nested_attributes_for :portfolios, reject_if: proc{ |attributes| attributes['name'].blank? }
   mount_uploader :avatar, AvatarUploader
 
   validates :name, presence: true, length: { maximum: 255 }
