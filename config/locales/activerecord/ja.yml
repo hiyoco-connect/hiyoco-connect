@@ -13,8 +13,8 @@ ja:
         name: '名前'
         grade: '期'
         gender: '性別'
-        birthplace_code: '出身地'
-        living_place_code: '居住地'
+        birthplace: '出身地'
+        living_place: '居住地'
         date_of_birth: '生年月日'
         blood_type: '血液型'
         siblings_relation: '兄弟関係'
@@ -50,11 +50,11 @@ ja:
       team_dev_will:
         unanswered: '未回答'
         not_available: '都合がつかない'
-        would_love_to: 'やってみたい!'
+        would_love_to: 'やってみたい！'
         interested_but: '興味はあるけど踏ん切りがつかない'
     portfolio:
       status:
         untouched: '未着手'
-        ongoing: '絶賛作成中!乞うご期待!(MVPリリース含む)'
+        ongoing: '絶賛作成中！乞うご期待！(MVPリリース含む)'
         released: 'リリース済み(ドヤァ)'
 
