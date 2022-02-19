@@ -13,8 +13,10 @@ AllCops:
     - 'bin/**/*'
     - 'spec/**/*'
     - 'node_modules/**/*'
+    - 'config/initializers/*.rb'
+    - 'lib/tasks/*.rake'
   DisplayCopNames: true
-
+  
 # 日本語でのコメントを許可
 Style/AsciiComments:
   Enabled: false

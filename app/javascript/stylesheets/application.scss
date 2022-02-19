@@ -9,3 +9,36 @@ body {
 main {
   flex: 1;
 }
+
+.form-container {
+  text-align: center;
+  margin: 0px 50px;
+}
+
+.text-input-area {
+  background-color: $gray-500;
+}
+
+.col-form-label {
+  text-align: right;
+}
+
+.pulldown {
+  background-image: url(../../assets/images/pull_down.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: right 10px center;
+}
+
+.avatar-upload {
+  width: 20px;
+  height: 30px;
+}
+
+.self-introduce {
+  height: 200px;
+}
+
+.field_with_errors {
+  display: contents;
+}
