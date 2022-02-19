@@ -50,11 +50,11 @@ ja:
       team_dev_will:
         unanswered: '未回答'
         not_available: '都合がつかない'
-        would_love_to: 'やってみたい!'
+        would_love_to: 'やってみたい！'
         interested_but: '興味はあるけど踏ん切りがつかない'
     portfolio:
       status:
         untouched: '未着手'
-        ongoing: '絶賛作成中!乞うご期待!(MVPリリース含む)'
+        ongoing: '絶賛作成中！乞うご期待！(MVPリリース含む)'
         released: 'リリース済み(ドヤァ)'
 
