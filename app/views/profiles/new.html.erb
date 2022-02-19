@@ -13,18 +13,18 @@
             <span style="color: red;"><%= @profile.errors.full_messages_for(:self_introduce).first %></span>
           <% end %>
         </ul>
-         <%= f.label :self_introduce %><span style="color: red;">*</span>
+        <%= f.label :self_introduce %><span style="color: red;">*</span>
         <div class="col">
           <%= f.text_area :self_introduce, class: 'form-control text-input-area self-introduce' , placeholder: "特徴的な自己紹介を書くといいかもです、、！"%> 
         </div>
       </div>
     </div>
       <div class="mb-3 row">
-    <ul class="mb-0">
-      <% if @profile.errors.include?(:name) %>
-        <span style="color: red;"><%= @profile.errors.full_messages_for(:name).first %></span>
-      <% end %>
-    </ul>
+        <ul class="mb-0">
+          <% if @profile.errors.include?(:name) %>
+            <span style="color: red;"><%= @profile.errors.full_messages_for(:name).first %></span>
+          <% end %>
+        </ul>
         <div class="col-md-4 col-md-offset-4 col-form-label" >
           <%= f.label :name %><span style="color: red;">*</span>
         </div>
@@ -94,11 +94,11 @@
         </div>
       </div>
       <div class="mb-3 row">
-    <ul class="mb-0">
-      <% if @profile.errors.include?(:hobby) %>
-        <span style="color: red;"><%= @profile.errors.full_messages_for(:hobby).first %></span>
-      <% end %>
-    </ul>
+        <ul class="mb-0">
+          <% if @profile.errors.include?(:hobby) %>
+            <span style="color: red;"><%= @profile.errors.full_messages_for(:hobby).first %></span>
+          <% end %>
+        </ul>
         <div class="col-md-4 col-md-offset-4 col-form-label" >
           <%= f.label :hobby %><span style="color: red;">*</span>
         </div>
@@ -133,11 +133,11 @@
       <%= f.fields_for :portfolios do |portfolio_form| %>
         <%= portfolio_form.hidden_field :profile_id , value: @profile.id %> 
         <div class="mb-3 row">
-    <ul class="mb-0">
-      <% if @profile.errors.include?(:name) %>
-        <span style="color: red;"><%= @profile.errors.full_messages_for(:name).first %></span>
-      <% end %>
-    </ul>
+          <ul class="mb-0">
+            <% if @profile.errors.include?(:name) %>
+              <span style="color: red;"><%= @profile.errors.full_messages_for(:name).first %></span>
+            <% end %>
+          </ul>
           <div class="col-md-4 col-md-offset-4 col-form-label" >
             <%= portfolio_form.label :name %><span style="color: red;">*</span>
           </div>
@@ -161,10 +161,10 @@
             <%= portfolio_form.enum_select :status,{prompt: ""}, {class: "form-control text-center text-input-area pulldown"} %>
           </div>
         </div> 
-      <% end %>       
+      <%end%>       
       <div class=" d-flex justify-content-center btn-wrapper">
         <%= f.submit "作成", class: ' mt-4 btn btn-warning' %> 
       </div>
     </div>
-  <% end %>
+  <%end%>
 </div>
