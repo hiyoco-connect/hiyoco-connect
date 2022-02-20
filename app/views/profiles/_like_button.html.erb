@@ -1,5 +1,5 @@
-<% # if current_user.liked_profiles.include?(@profile) %>
-  <%= link_to 'UnLike', profile_like_path(@profile), method: :delete %>
-<% # else %>
-  <%= link_to 'Like', profile_like_path(@profile), method: :post %>
-<% # end %>
+<%  if current_user.liked_profiles.include?(@profile) %>
+  <%= render 'unlike', { profile: profile } %>
+<%  else %>
+  <%= render 'like', { profile: profile } %>
+<%  end %>

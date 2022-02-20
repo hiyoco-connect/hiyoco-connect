@@ -1,8 +1,5 @@
 
-<%
-=begin%>
- <% if current_user.own?(@profile) %>
-<% else %>
-<%
-=end%>
-  <%= render 'like_button', profile: @profile  %>
+<% # if current_user.own?(@profile) %>
+  <% # else %>
+    <%= render 'like_button', profile: @profile  %>
+  <% # end %>
