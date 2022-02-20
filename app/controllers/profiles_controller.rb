@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @profiles = Profile.all.includes(:user).order(grade: :desc).order(name: :asc)
+    @profiles = Profile.all.includes(:user).order(grade: :desc).order(name: :asc).page(params[:page]).per(18)
   end
 
   def show; end
