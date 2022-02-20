@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="col-10 offset-1 py-5">
+    <div class="row">
+      <% if @profiles.present? %>
+        <%= render @profiles %>
+      <% else %>
+        <p><%= 'プロフィールがまだありません' %></p>
+        <% end %>
+    </div>
+  </div>
+</div>
