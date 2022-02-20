@@ -8,7 +8,9 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
   end
 
-  def show; end
+  def show
+    @profile = Profile.find(params[:id])
+  end
 
   def edit; end
 
@@ -24,6 +26,10 @@ class ProfilesController < ApplicationController
   end
 
   def update; end
+
+  def likes
+    @liked_profiles = current_user.liked_profiles
+  end
 
   private
 

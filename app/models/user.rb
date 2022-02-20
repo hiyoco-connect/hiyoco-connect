@@ -17,10 +17,27 @@
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  accepts_nested_attributes_for :authentications
 
   has_many :authentications, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_profiles, through: :likes, source: :profile
   has_one :profile, dependent: :destroy
+
+  accepts_nested_attributes_for :authentications
+
+  def own?(object)
+    id == object.user_id
+  end
+
+  def like(profile)
+    liked_profiles << profile
+  end
+
+  def unlike(profile)
+    liked_profiles.destroy(profile)
+  end
+
+  def like?(like)
+    liked_profiles.include?(like)
+  end
 end
