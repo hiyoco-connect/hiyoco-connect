@@ -76,6 +76,9 @@ GEM
       debug_inspector (>= 0.0.1)
     bootsnap (1.10.3)
       msgpack (~> 1.2)
+    bootstrap5-kaminari-views (0.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     brakeman (5.2.1)
     builder (3.2.4)
     bullet (7.0.1)
@@ -147,6 +150,18 @@ GEM
     jp_prefecture (1.0.0)
     json (2.6.1)
     jwt (2.3.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -334,6 +349,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.4)
+  bootstrap5-kaminari-views
   brakeman
   bullet
   byebug
@@ -342,6 +358,7 @@ DEPENDENCIES
   enum_help
   jbuilder (~> 2.7)
   jp_prefecture
+  kaminari
   listen (~> 3.3)
   pg (~> 1.1)
   pry-byebug

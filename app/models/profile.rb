@@ -49,6 +49,9 @@ class Profile < ApplicationRecord
   enum team_dev_will: { unanswered: 0, not_available: 1, would_love_to: 2, interested_but: 3 },
        _suffix: true
 
+  scope :grade_desc, -> { order(grade: :desc) }
+  scope :name_asc, -> { order(name: :asc) }
+
   include JpPrefecture
   jp_prefecture :birthplace_code, method_name: :birthplace
   jp_prefecture :living_place_code, method_name: :living_place
