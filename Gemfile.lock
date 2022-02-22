@@ -44,6 +44,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (6.1.4.4)
       activesupport (= 6.1.4.4)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (6.1.4.4)
       activemodel (= 6.1.4.4)
       activesupport (= 6.1.4.4)
@@ -109,6 +113,13 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     debug_inspector (1.1.0)
+    draper (4.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
+      ruby2_keywords
     enum_help (0.0.18)
       activesupport (>= 3.0.0)
     erubi (1.10.0)
@@ -254,6 +265,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.2.0)
+    request_store (1.5.1)
+      rack (>= 1.4)
     require_all (3.0.0)
     rexml (3.2.5)
     rinku (2.0.6)
@@ -355,6 +368,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   carrierwave
+  draper
   enum_help
   jbuilder (~> 2.7)
   jp_prefecture
