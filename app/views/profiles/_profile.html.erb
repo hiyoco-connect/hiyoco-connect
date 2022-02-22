@@ -1,21 +1,9 @@
 <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 px-5 py-4">
   <div id="profile-id-<%= profile.id %>">
-    <div class="row">
-      <% if profile.avatar? %>
-        <%= link_to '#' do %>
-          <%= image_tag profile.avatar.url, class: 'rounded-circle img-fluid mx-auto d-block', size: '100x100' %>
-        <% end %>
-      <% else %>
-        <% if !profile.user.remote_avatar_url? %>
-          <%= link_to '#' do %>
-            <%= image_tag 'default_avatar.png', class: 'rounded-circle img-fluid mx-auto d-block', size: '100x100' %>
-          <% end %>
-        <% else %>
-          <%= link_to '#' do %>
-            <%= image_tag profile.user.remote_avatar_url, class: 'rounded-circle img-fluid mx-auto d-block', size: '100x100' %>
-          <% end %>
-        <% end %>
-      <% end %>
+    <div class="row">     
+      <%= link_to profile_path(profile) do %>
+        <%= image_tag profile.decorate.check_avatar, class: 'rounded-circle img-fluid mx-auto d-block', size: '100x100' %>
+      <%end%>
     </div>
     <div class="row">
       <span class="text-center text-break"><%= "#{profile.grade}期" %></span>

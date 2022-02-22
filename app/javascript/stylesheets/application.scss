@@ -17,6 +17,8 @@ main {
 
 .text-input-area {
   background-color: $gray-500;
+  padding: 0.375rem 0.75rem;
+  border-radius: 15px;
 }
 
 .col-form-label {
@@ -37,6 +39,26 @@ main {
 
 .self-introduce {
   height: 200px;
+  max-width: 590px;
+  word-break: break-word;
+}
+
+.profile-name {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.sns-icon{
+  width: 40px;
+}
+
+.favorite-button{
+  padding: 0px 13px;
+  margin: auto;
+  height: 26px;
+  width: 115px;
+  background-color: $primary;
+  border-radius: 40px;
 }
 
 .field_with_errors {
