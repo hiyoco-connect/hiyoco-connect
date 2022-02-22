@@ -26,14 +26,7 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def update
-    if @profile.update(profile_params)
-      redirect_to @user, success: '更新しました'
-    else
-      flash.now[:danger] = '編集に失敗しました'
-      render 'edit'
-    end
-  end
+  def update; end
 
   private
 
