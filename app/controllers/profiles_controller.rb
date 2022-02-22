@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: %i[ show edit update ]
-  before_action :set_portfolio, only: %i[ show ]
-  
+  before_action :set_profile, only: %i[show edit update]
+  before_action :set_portfolio, only: %i[show]
+
   def new
     @profile = current_user.build_profile
     @profile.portfolios.build
