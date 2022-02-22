@@ -52,13 +52,21 @@ main {
   width: 40px;
 }
 
-.favorite-button{
+.favorite-btn{
   padding: 0px 13px;
   margin: auto;
   height: 26px;
   width: 115px;
-  background-color: $primary;
   border-radius: 40px;
+}
+
+.edit-btn{
+  padding: 4px 13px;
+  margin-left: 800px;
+  height: 36px;
+  width: 125px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
 .field_with_errors {

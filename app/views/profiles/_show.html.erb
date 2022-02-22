@@ -17,7 +17,7 @@
        <i class="fab fa-github mr-2"></i>
      </div>
    </div>
-    <button type="button" class="btn btn-primary d-flex justify-content-center favorite-button">
+    <button type="button" class="btn btn-primary d-flex justify-content-center favorite-btn">
       <p>いいね！</p>
       <%= image_tag 'hiyoco.png', size: '20x20'%>
     </button>
@@ -145,6 +145,6 @@
     </div>
   </div>   
 <%end%>
-<div class="col-md-5 col-md-offset-5">
-  <%=link_to '編集',edit_profile_path, class: 'mt-4 btn btn-warning' %> 
+<div>
+  <%=link_to '編集',edit_profile_path, class: 'mt-4 btn btn-warning edit-btn' %> 
 </div>
