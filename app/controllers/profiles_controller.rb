@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[show edit update]
+  before_action :set_portfolio, only: %i[show edit]
 
   def new
     @profile = current_user.build_profile
@@ -10,9 +11,7 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all.includes(:user).grade_desc.name_asc.page(params[:page]).per(18)
   end
 
-  def show
-    @portfolio = @profile.portfolios
-  end
+  def show; end
 
   def edit; end
 
@@ -43,4 +42,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  def set_portfolio
+    @portfolio = @profile.portfolios
+  end
 end
