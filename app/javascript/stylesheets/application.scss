@@ -39,6 +39,7 @@ main {
 
 .self-introduce {
   height: 200px;
+  text-align: left;
   max-width: 590px;
   word-break: break-word;
 }
@@ -46,10 +47,15 @@ main {
 .profile-name {
   font-size: 21px;
   font-weight: bold;
+  margin: 0px 10px;
+  width: auto;
 }
 
 .sns-icon{
-  width: 40px;
+  font-size: 21px;
+  font-weight: bold;
+  margin: 0px 5px;
+  width: auto;
 }
 
 .favorite-btn{
@@ -61,12 +67,8 @@ main {
 }
 
 .edit-btn{
-  padding: 4px 13px;
   margin-left: 800px;
-  height: 36px;
-  width: 125px;
-  border-radius: 10px;
-  font-weight: bold;
+  font-size: 25px;
 }
 
 .field_with_errors {
