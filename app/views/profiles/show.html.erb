@@ -100,11 +100,7 @@
   </div>
   <div class="col-md-5 col-md-offset-5">
     <p class="text-input-area">
-     <%if @profile.hobby.present?%>
-        <%= @profile.hobby%>
-      <%else%>
-         <%= t('defaults.not_answered')%>
-      <%end%>
+      <%= @profile.hobby%>
     </p>
   </div>
 </div>
@@ -147,7 +143,7 @@
     </p>
   </div>
 </div>
-<% @portfolio.each.with_index do |pf|%>
+<% @portfolio.each do |pf|%>
   <div class="mb-3 row"> 
     <div class="col-md-6 col-md-offset-6">
       <%= (t 'activerecord.attributes.portfolio.name')%>
