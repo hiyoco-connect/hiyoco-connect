@@ -1,13 +1,13 @@
 class ProfileDecorator < Draper::Decorator
   delegate_all
 
-  def check_avatar
+  def get_avatar_url
     if object.avatar?
       object.avatar.url
-    elsif !object.user.remote_avatar_url?
-      'default_avatar.png'
-    else
+    elsif object.user.remote_avatar_url?
       object.user.remote_avatar_url
+    else
+      'default_avatar.png'
     end
   end
 end

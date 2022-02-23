@@ -2,7 +2,7 @@
   <div id="profile-id-<%= profile.id %>">
     <div class="row">     
       <%= link_to profile_path(profile) do %>
-        <%= image_tag profile.decorate.check_avatar, class: 'rounded-circle img-fluid mx-auto d-block', size: '100x100' %>
+        <%= image_tag profile.decorate.get_avatar_url, class: 'rounded-circle img-fluid mx-auto d-block', size: '100x100' %>
       <%end%>
     </div>
     <div class="row">
