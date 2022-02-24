@@ -10,5 +10,6 @@ import "bootstrap"
 import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 import "jquery"
+import "@nathanvda/cocoon"
 Rails.start()
 ActiveStorage.start()
