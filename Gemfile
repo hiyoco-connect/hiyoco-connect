@@ -70,6 +70,7 @@ gem 'jp_prefecture'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'rinku'
 gem 'ransack'
+gem 'seed-fu'
 
 # paginaton
 gem 'bootstrap5-kaminari-views'
