@@ -113,6 +113,8 @@ GEM
       activesupport (>= 3.0.0)
     erubi (1.10.0)
     erubis (2.7.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     faraday (1.9.3)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -363,6 +365,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   enum_help
+  faker
   jbuilder (~> 2.7)
   jp_prefecture
   kaminari
