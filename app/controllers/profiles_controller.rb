@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
   end
 
   def update; end
-
+  
   private
 
   def profile_params
@@ -32,6 +32,6 @@ class ProfilesController < ApplicationController
                                     :date_of_birth, :blood_type, :siblings_relation, :hobby,
                                     :times_name, :team_dev_will, :twitter_account, :self_introduce,
                                     :avatar, :avatar_cache,
-                                    portfolios_attributes: %i[id profile_id name url status])
+                                    portfolios_attributes: %i[id profile_id name url status _destroy])
   end
 end
