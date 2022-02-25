@@ -113,6 +113,8 @@ GEM
       activesupport (>= 3.0.0)
     erubi (1.10.0)
     erubis (2.7.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     faraday (1.9.3)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -292,6 +294,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    seed-fu (2.3.9)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -356,6 +361,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   enum_help
+  faker
   jbuilder (~> 2.7)
   jp_prefecture
   kaminari
@@ -373,6 +379,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   sass-rails (>= 6)
+  seed-fu
   selenium-webdriver
   sorcery
   spring
