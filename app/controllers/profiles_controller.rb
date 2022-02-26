@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: %i[index search]
   before_action :set_profile, only: %i[show edit update]
   before_action :set_portfolio, only: %i[show edit]
 
@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to @profile, success: t('defaults.messages.created', item: Profile.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_created', item: Profile.model_name.human)    
+      flash.now['danger'] = t('defaults.message.not_created', item: Profile.model_name.human)
       render :new
     end
   end
