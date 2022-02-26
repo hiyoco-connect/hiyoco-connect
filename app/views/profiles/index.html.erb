@@ -9,6 +9,12 @@
     </div>
   </div>
 
+  <div class="profile-sarch-btn">
+    <%= link_to search_profiles_path do %>
+      <i class="fa fa-magnifying-glass"></i>
+    <% end %>
+  </div>
+
   <div class="d-flex justify-content-center pb-3">
     <%= paginate @profiles, theme: 'bootstrap-5' %>
   </div>
