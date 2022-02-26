@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: 'static_pages#top'
-  resources :profiles, only: %i[new create index show edit update]
+  resources :profiles, only: %i[new create index show edit update] do
+    collection do
+      get 'search'
+    end
+  end
 
   post 'oauth/callback', to: 'oauths#callback'
   get 'oauth/callback', to: 'oauths#callback'
