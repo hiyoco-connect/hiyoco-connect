@@ -55,4 +55,10 @@ class Profile < ApplicationRecord
   include JpPrefecture
   jp_prefecture :birthplace_code, method_name: :birthplace
   jp_prefecture :living_place_code, method_name: :living_place
+
+  def age
+    day1 = self.date_of_birth.strftime("%Y%m%d").to_i
+    day2 = Date.today.strftime("%Y%m%d").to_i
+    return (day2 - day1) / 10000
+  end
 end
