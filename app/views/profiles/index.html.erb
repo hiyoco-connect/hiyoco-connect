@@ -4,8 +4,8 @@
       <% if @profiles.present? %>
         <%= render @profiles %>
       <% else %>
-        <p><%= 'プロフィールがまだありません' %></p>
-        <% end %>
+        <p><%= t 'profiles.index.profile_not_found_message' %></p>
+      <% end %>
     </div>
   </div>
 

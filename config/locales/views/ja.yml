@@ -18,3 +18,6 @@ ja:
       title: 'プライバシーポリシー'
     contact:
       title: 'お問い合わせ'
+  profiles:
+    index:
+      profile_not_found_message: 'プロフィールが見つかりませんでした…'
