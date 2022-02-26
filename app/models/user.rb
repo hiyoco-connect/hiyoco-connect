@@ -25,10 +25,6 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :authentications
 
-  def own?(object)
-    id == object.user_id
-  end
-
   def like(profile)
     liked_profiles << profile
   end
@@ -39,5 +35,9 @@ class User < ApplicationRecord
 
   def like?(like)
     liked_profiles.include?(like)
+  end
+
+  def own?(object)
+    object.user_id == id
   end
 end

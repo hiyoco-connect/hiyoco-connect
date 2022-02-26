@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row py-2">
       <div class="col-12 text-center">
-        <a class="text-dark px-2" href="#">利用規約</a>
-        <a class="text-dark px-2" href="#">プライバシーポリシー</a>
-        <a class="text-dark px-2" href="#">お問い合わせ</a>
+        <%= link_to (t 'static_pages.terms.title'), terms_path, class: 'text-dark px-2 text-decoration-none' %>
+        <%= link_to (t 'static_pages.policy.title'), policy_path, class: 'text-dark px-2 text-decoration-none' %>
+        <%= link_to (t 'static_pages.contact.title'), contact_path, class: 'text-dark px-2 text-decoration-none' %>
       </div>
     </div>
 

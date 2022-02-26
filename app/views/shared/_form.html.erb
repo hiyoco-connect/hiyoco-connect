@@ -1,0 +1,167 @@
+ <%= form_with( model: profile, builder: ProfilesHelper::ProfileFormHelper ,local: true) do |f| %>
+    <div class="form-group row mt-4">
+      <div class="col-md-6 col-md-offset-6 ">
+        <%= f.label :avatar %>
+        <div>
+          <%= f.file_field :avatar %>
+        </div>
+      </div>
+      <div class="mb-5 col self-introduce">
+        <ul class="mb-0">
+          <% if profile.errors.include?(:self_introduce) %>
+            <span style="color: red;"><%= profile.errors.full_messages_for(:self_introduce).first %></span>
+          <% end %>
+        </ul>
+        <%= f.label :self_introduce %><span style="color: red;">*</span>
+        <div class="col">
+          <%= f.text_area :self_introduce, class: 'form-control text-input-area self-introduce' , placeholder: "特徴的な自己紹介を書くといいかも！"%> 
+        </div>
+      </div>
+    </div>
+      <div class="mb-3 row">
+        <ul class="mb-0">
+          <% if profile.errors.include?(:name) %>
+            <span style="color: red;"><%= profile.errors.full_messages_for(:name).first %></span>
+          <% end %>
+        </ul>
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :name %><span style="color: red;">*</span>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :name, class: 'form-control text-input-area', placeholder: "例) ひよこ太郎" %> 
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :birthplace %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%=f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, {prompt: false}, {class: "form-control text-center text-input-area pulldown"} %>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :living_place %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%=f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name ,{prompt: false}, {class: "form-control text-center text-input-area pulldown"} %>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :gender %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.enum_select :gender,{prompt: ""}, {class: "form-control text-center text-input-area pulldown"}%>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :date_of_birth %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.date_field :date_of_birth, class: 'form-control text-input-area' %>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <ul class="mb-0">
+          <% if profile.errors.include?(:grade) %>
+            <span style="color: red;"><%= profile.errors.full_messages_for(:grade).first %></span>
+          <% end %>
+        </ul>
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :grade %><span style="color: red;">*</span>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :grade, class: 'form-control text-input-area', placeholder: "例) 23" %>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :blood_type %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.enum_select :blood_type ,{prompt: ""}, {class: "form-control text-center text-input-area pulldown"}%>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :siblings_relation %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.enum_select :siblings_relation ,{prompt: ""}, {class: "form-control text-center text-input-area pulldown"}%>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <ul class="mb-0">
+          <% if profile.errors.include?(:hobby) %>
+            <span style="color: red;"><%= profile.errors.full_messages_for(:hobby).first %></span>
+          <% end %>
+        </ul>
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :hobby %><span style="color: red;">*</span>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :hobby, class: 'form-control text-input-area', placeholder: "例） 筋トレ、読書、カフェ巡り"%>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :times_name %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :times_name, class: 'form-control text-input-area', placeholder: "例) times_00期_hiyoco_connect" %>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :team_dev_will %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.enum_select :team_dev_will,{prompt: ""}, {class: "form-control text-center text-input-area pulldown"} %>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-4 col-md-offset-4 col-form-label" >
+          <%= f.label :twitter_account  %>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.text_field :twitter_account, class: 'form-control text-input-area', placeholder: "例) @hogehoge" %>
+        </div>
+      </div>
+      <%=  f.fields_for :portfolios, @profile.portfolios.build do |portfolio_form| %>         <%= portfolio_form.hidden_field :profile_id , value: profile.id %> 
+        <div class="mb-3 row">
+          <ul class="mb-0">
+            <% if profile.errors.include?(:name) %>
+              <span style="color: red;"><%= profile.errors.full_messages_for(:name).first %></span>
+            <% end %>
+          </ul>
+          <div class="col-md-4 col-md-offset-4 col-form-label" >
+            <%= portfolio_form.label :name %>
+          </div>
+          <div class="col-md-6 col-md-offset-3">
+            <%= portfolio_form.text_field :name, class: 'form-control text-input-area', placeholder: "例) ひよこコネクト" %>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col-md-4 col-md-offset-4 col-form-label" >
+            <%= portfolio_form.label :url %>
+          </div>
+          <div class="col-md-6 col-md-offset-3">
+            <%= portfolio_form.text_field :url, class: 'form-control text-input-area', placeholder: "https://www.example.com" %>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col-md-4 col-md-offset-4 col-form-label" >
+            <%= portfolio_form.label :status %>
+          </div>
+          <div class="col-md-6 col-md-offset-3">
+            <%= portfolio_form.enum_select :status,{prompt: ""}, {class: "form-control text-center text-input-area pulldown"} %>
+          </div>
+        </div> 
+      <%end%>       
+      <div class=" d-flex justify-content-center btn-wrapper">
+        <%= f.submit "作成", class: ' mt-4 btn btn-warning' %> 
+      </div>
+    </div>
+  <%end%>
