@@ -15,12 +15,29 @@ main {
   margin: 0px 50px;
 }
 
+.profiles-container{
+  width: auto;
+  margin: 0px 180px 0px 301px;
+}
+
+.avatar-self-introduce{
+  width: auto;
+  margin: 0px 0px 0px 190px;
+}
+
 .text-input-area {
   background-color: $gray-500;
+  padding: 0.375rem 0.75rem;
+  border-radius: 15px;
+}
+
+.avatar-label{
+  width: 200px;
+  margin-right: 60px;
 }
 
 .col-form-label {
-  text-align: right;
+  text-align: center;
 }
 
 .pulldown {
@@ -36,7 +53,71 @@ main {
 }
 
 .self-introduce {
-  height: 200px;
+  height: 300px;
+  text-align: left;
+  width: 470px;
+  word-break: break-word;
+  white-space: pre-wrap
+}
+
+.profile-name {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 0px 10px;
+  width: auto;
+}
+
+.sns-icon{
+  font-size: 21px;
+  font-weight: bold;
+  margin: 0px 5px;
+  width: auto;
+}
+
+.favorite-btn{
+  padding: 0px 13px;
+  margin: auto;
+  height: 26px;
+  width: 115px;
+  border-radius: 40px;
+}
+
+.crud-btn{
+  margin-left: 568px;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.button-edit{
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #43b926;
+  border-radius: 10px;
+}
+
+.button-delete{
+  color: #fff;
+  padding: 10px 34px;
+  text-decoration: none;
+  background-color: #c36200;
+  border-radius: 10px;
+}
+
+.profile-label{
+  text-align: left;
+  width: 161px;
+  font-weight: bold;
+}
+
+.self-introduce-label{
+  font-weight: bold;
+  text-align: left;
+}
+
+.grade-label{
+  width: 100%;
+  font-weight: bold;
 }
 
 .field_with_errors {
