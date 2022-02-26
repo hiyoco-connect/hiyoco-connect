@@ -1,8 +1,16 @@
 ja:
   defaults:
+    messages:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'
     app_title: 'ひよこコネクト'
     login: 'ログイン'
     logout: 'ログアウト'
+    not_answered: '未回答'
   oauths:
     callback:
       to_login: 'ログインする'
@@ -11,3 +19,10 @@ ja:
   user_sessions:
     destroy:
       success: 'ログアウトしました'
+  static_pages:
+    terms:
+      title: '利用規約'
+    policy:
+      title: 'プライバシーポリシー'
+    contact:
+      title: 'お問い合わせ'

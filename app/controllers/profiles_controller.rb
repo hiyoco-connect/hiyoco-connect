@@ -1,11 +1,14 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: %i[show edit update]
+  before_action :set_portfolio, only: %i[show edit]
+
   def new
     @profile = current_user.build_profile
     @profile.portfolios.build
   end
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.all.includes(:user).grade_desc.name_asc.page(params[:page]).per(18)
   end
 
   def show; end
@@ -16,9 +19,9 @@ class ProfilesController < ApplicationController
     @profile = current_user.build_profile(profile_params)
 
     if @profile.save
-      redirect_to @profile, success: 'プロフィールを作成しました'
+      redirect_to @profile, success: t('defaults.messages.created', item: Profile.model_name.human)
     else
-      flash.now['danger'] = '作成に失敗しました'
+      flash.now['danger'] = t('defaults.message.not_created', item: Profile.model_name.human)    
       render :new
     end
   end
@@ -33,5 +36,13 @@ class ProfilesController < ApplicationController
                                     :times_name, :team_dev_will, :twitter_account, :self_introduce,
                                     :avatar, :avatar_cache,
                                     portfolios_attributes: %i[id profile_id name url status])
+  end
+
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
+
+  def set_portfolio
+    @portfolio = @profile.portfolios
   end
 end
