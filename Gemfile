@@ -69,6 +69,7 @@ gem 'enum_help'
 gem 'jp_prefecture'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'rinku'
+
 gem 'ransack'
 
 # paginaton
