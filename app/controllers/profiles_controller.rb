@@ -21,7 +21,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to @profile, success: t('defaults.messages.created', item: Profile.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_created', item: Profile.model_name.human)    
+      flash.now['danger'] = t('defaults.messages.not_created', item: Profile.model_name.human)    
       render :new
     end
   end
