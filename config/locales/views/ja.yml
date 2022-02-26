@@ -31,3 +31,7 @@ ja:
       success: 'いいね！しました'
     destroy:
       success: 'いいね！を取り消しました'
+  profiles:
+    show:
+      like: 'いいね！'
+      liked: 'いいね済'

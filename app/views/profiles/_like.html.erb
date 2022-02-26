@@ -1,6 +1,6 @@
 <%= link_to profile_like_path(@profile), method: :post, class: 'text-decoration-none' do %>
   <button class="btn btn-primary d-flex justify-content-center rounded-pill">
-    <span>いいね！</span>
+    <span><%= t('profiles.show.like') %></span>
     <span><%= image_tag 'hiyoco.png', size: '22x22', class: 'pb-1' %></span>
   </button>
 <% end %>
