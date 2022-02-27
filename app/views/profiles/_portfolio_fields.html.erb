@@ -1,7 +1,5 @@
 <div class="nested-fields">
   <%= f.hidden_field :profile_id , value: @profile.id %> 
-  <div class="row justify-content-center mb-3"><%= Portfolio.model_name.human %></div>
-
   <div class="mb-3 row">
     <ul class="mb-0">
       <% if @profile.errors.include?(:name) %>
@@ -15,7 +13,7 @@
       <%= f.text_field :name, class: 'form-control text-input-area', placeholder: "例) ひよこコネクト" %>
     </div>
     <!-- フォーム削除ボタン -->
-    <div class="offset-1 col-1 px-0 w-auto">
+    <div class="col-1 px-0 w-auto">
       <%= link_to_remove_association "削除", f, class: "btn btn-secondary btn-block" %>
     </div>
   </div>
