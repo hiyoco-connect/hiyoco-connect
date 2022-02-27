@@ -9,7 +9,7 @@
       </div>
       <div class="d-flex justify-content-center">
         <div class="my-1 profile-name">
-          <%= @profile.name %> 
+          <%= @profile.name %>
         </div>
         <%if @profile.twitter_account.present?%>
           <div class="my-2">
@@ -22,17 +22,18 @@
             <i class="fab fa-github sns-icon"></i>
           </div>
       </div>
-      <button type="button" class="btn btn-primary d-flex justify-content-center favorite-btn">
-        <p>いいね！</p>
-        <%= image_tag 'hiyoco.png', size: '20x20'%>
-      </button>
+      <div class="d-flex justify-content-center">
+        <% unless current_user.own?(@profile) %>
+          <%= render 'like_button', profile: @profile  %>
+        <% end %>
+      </div>
     </div>
     <div class="mb-5 col-md-5 col-md-offset-5">
       <div class="col">
-        <p class="self-introduce-label">自己紹介文</p> 
+        <p class="self-introduce-label">自己紹介文</p>
       </div>
       <div class="col text-input-area self-introduce">
-        <%= @profile.self_introduce %> 
+        <%= @profile.self_introduce %>
       </div>
     </div>
   </div>
@@ -147,12 +148,12 @@
   </div>
 </div>
 <% @portfolio.each do |pf|%>
-  <div class="mb-3 row"> 
+  <div class="mb-3 row">
     <div class="col-md-6 col-md-offset-6 profile-label">
       <%= (t 'activerecord.attributes.portfolio.name')%>
     </div>
     <div class="col">
-      <p class="text-input-area">  
+      <p class="text-input-area">
          <%if pf.name.present?%>
           <%= pf.name %>
         <%else%>
@@ -184,7 +185,7 @@
         <%= pf.status_i18n %>
       </p>
     </div>
-  </div>   
+  </div>
 <%end%>
 </div>
   <div class="crud-btn">

@@ -29,6 +29,10 @@ class ProfilesController < ApplicationController
 
   def update; end
 
+  def likes
+    @liked_profiles = current_user.liked_profiles
+  end
+  
   def search; end
 
   private
