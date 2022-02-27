@@ -24,5 +24,4 @@ class User < ApplicationRecord
   def own?(object)
     object.user_id == id
   end
-
 end
