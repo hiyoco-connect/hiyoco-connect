@@ -2,7 +2,7 @@
   <div class="row mt-4 avatar-self-introduce">
     <div class="col-md-6 col-md-offset-6 avatar-label">
       <div>
-        <%=image_tag @profile.decorate.get_avatar_url, class: 'rounded-circle img-fluid mx-auto d-block', size: '200x200' %>
+        <%=image_tag @profile.decorate.avatar_url, class: 'rounded-circle img-fluid mx-auto d-block', size: '200x200' %> 
       </div>
       <div class="mt-3 col-md-5 col-md-offset-5 grade-label">
         <%= @profile.grade%>期
