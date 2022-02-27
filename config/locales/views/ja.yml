@@ -27,6 +27,9 @@ ja:
     contact:
       title: 'お問い合わせ'
   profiles:
+    new:
+      delete: '削除'
+      add_form: '+ ポートフォリオ入力欄を追加'
     show:
       like: 'いいね！'
       liked: 'いいね済'
