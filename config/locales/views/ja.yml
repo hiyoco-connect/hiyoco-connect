@@ -26,11 +26,6 @@ ja:
       title: 'プライバシーポリシー'
     contact:
       title: 'お問い合わせ'
-  likes:
-    create:
-      success: 'いいね！しました'
-    destroy:
-      success: 'いいね！を取り消しました'
   profiles:
     show:
       like: 'いいね！'
