@@ -127,3 +127,25 @@ main {
 .pagination>li>a {
   color: #000000;
 }
+
+.profile-sarch-btn {
+  position: fixed;
+  bottom: 6%;
+  right: 4%;
+  font-size: 150%;
+}
+.profile-sarch-btn a {
+  background: #666;
+  text-decoration: none;
+  color: #fff;
+  width: 64px;
+  height: 64px;
+  padding: 16px 0;
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+}
+.profile-sarch-btn a:hover {
+  text-decoration: none;
+  background: #999;
+}

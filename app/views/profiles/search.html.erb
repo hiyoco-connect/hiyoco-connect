@@ -1,0 +1,105 @@
+<div class="container my-5">
+    <%= search_form_for @q, url: profiles_path do |f| %>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <div class="input-group">
+            <%= f.search_field :name_or_self_introduce_or_hobby_cont, placeholder: (t '.free_word_placeholder'), class: 'form-control' %>
+            <span class="input-group-btn"><%= f.submit (t '.search_btn'), class: 'btn btn-success'%></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 期生 -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-3 col-form-label">
+          <%= f.label :grade_eq, Profile.human_attribute_name(:grade) %>
+        </div>
+        <div class="col-5">
+          <%= f.number_field :grade_eq, min: 1, class: 'form-control text-center'%>
+        </div>
+      </div>
+
+      <!-- 年齢 -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-3 col-form-label">
+          <%= f.label :date_of_birth_to_age_gteq, Profile.human_attribute_name(:age) %>
+        </div>
+        <div class="col-2">
+          <%= f.number_field :date_of_birth_to_age_gteq, min: 1, max: 100, class: 'form-control text-center' %>
+        </div>
+        <div class="col-1 text-center pt-1">
+          〜
+        </div>  
+        <div class="col-2">
+          <%= f.number_field :date_of_birth_to_age_lteq, min: 1, max: 100, class: 'form-control text-center' %>
+        </div>
+      </div>
+
+      <!-- 性別 -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-3 col-form-label">
+          <%= f.label :gender_eq , Profile.human_attribute_name(:gender) %>
+        </div>
+        <div class="col-5">
+          <%= f.select :gender_eq, Profile.genders.map{|key, value| [Profile.genders_i18n[key], value] if (1..2).cover?(value)}.compact, { include_blank: true }, class: 'form-control text-center pulldown'%>
+        </div>
+      </div>
+
+      <!-- 出身地 -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-3 col-form-label">
+          <%= f.label :birthplace_code_eq, Profile.human_attribute_name(:birthplace) %>
+        </div>
+        <div class="col-5">
+          <%= f.collection_select :birthplace_code_eq, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'form-control text-center pulldown' %>
+        </div>
+      </div>
+
+      <!-- 居住地 -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-3 col-form-label">
+          <%= f.label :living_place_code_eq, Profile.human_attribute_name(:living_place) %>
+        </div>
+        <div class="col-5">
+          <%= f.collection_select :living_place_code_eq, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'form-control text-center pulldown' %>
+        </div>
+      </div>
+
+      <!-- 血液型 -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-3 col-form-label">
+          <%= f.label :blood_type_eq , Profile.human_attribute_name(:blood_type) %>
+        </div>
+        <div class="col-5">
+          <%= f.select :blood_type_eq, Profile.blood_types.map{|key, value| [Profile.blood_types_i18n[key], value] if value > 0}.compact, { include_blank: true }, class: 'form-control text-center pulldown'%>
+        </div>
+      </div>
+
+      <!-- 兄弟関係 -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-3 col-form-label">
+          <%= f.label :siblings_relation_eq , Profile.human_attribute_name(:siblings_relation) %>
+        </div>
+        <div class="col-5">
+          <%= f.select :siblings_relation_eq, Profile.siblings_relations.map{|key, value| [Profile.siblings_relations_i18n[key], value] if value > 0}.compact, { include_blank: true }, class: 'form-control text-center pulldown'%>
+        </div>
+      </div>
+
+      <!-- チーム開発希望 -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-3 col-form-label">
+          <%= f.label :team_dev_will_eq , Profile.human_attribute_name(:team_dev_will) %>
+        </div>
+        <div class="col-5">
+          <%= f.select :team_dev_will_eq, Profile.team_dev_wills.map{|key, value| [Profile.team_dev_wills_i18n[key], value] if value > 0}.compact, { include_blank: true }, class: 'form-control text-center pulldown'%>
+        </div>
+      </div>
+
+      <!-- 検索条件リセット -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-8 text-end">
+          <%= f.submit (t '.reset_search_option'), type: :reset, class: 'btn btn-outline-dark' %>
+        </div>
+      </div>
+    <% end %>
+</div>
