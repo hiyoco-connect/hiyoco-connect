@@ -11,9 +11,7 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all.includes(:user).grade_desc.name_asc.page(params[:page]).per(18)
   end
 
-  def show
-    @profile = Profile.find(params[:id])
-  end
+  def show; end
 
   def edit; end
 
