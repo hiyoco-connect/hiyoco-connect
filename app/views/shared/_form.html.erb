@@ -132,7 +132,7 @@
     </div>
   </div>
 
-  <div class="mb-3 row col-md-4  col-md-offset-4 justify-content-center col-form-label" style="font-weight: bold"><%= Portfolio.model_name.human %></div>
+  <div class="mb-3 row col-md-4  col-md-offset-4 justify-content-center" style="font-weight: bold"><%= Portfolio.model_name.human %></div>
 
   <%= f.fields_for :portfolios, @profile.portfolios.build do |t| %>
     <%= render 'profiles/portfolio_fields', f: t, profile: profile %>
