@@ -18,9 +18,12 @@
           <%end%>
           </div>
         <%end%>
+        <%=link_to "https://github.com/#{@profile.user.github_name}", target: :_blank, rel: "noopener noreferrer" do %>
           <div class="my-2">
-            <i class="fab fa-github sns-icon"></i>
+            <i class="fab fa-github sns-icon text-dark"></i>
           </div>
+        <% end %>
+
       </div>
       <div class="d-flex justify-content-center">
         <% unless current_user.own?(@profile) %>
