@@ -1,0 +1,38 @@
+<div class="nested-fields">
+  <%= f.hidden_field :profile_id , value: @profile.id %> 
+  <div class="mb-3 row">
+    <ul class="mb-0">
+      <% if @profile.errors.include?(:name) %>
+        <span style="color: red;"><%= @profile.errors.full_messages_for(:name).first %></span>
+      <% end %>
+    </ul>
+    <div class="col-md-4 col-md-offset-4 col-form-label" >
+      <%= f.label :name %>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+      <%= f.text_field :name, class: 'form-control text-input-area', placeholder: "例) ひよこコネクト" %>
+    </div>
+    <!-- フォーム削除ボタン -->
+    <div class="col-1 px-0 w-auto">
+      <%= link_to_remove_association t('.delete'), f, class: "btn btn-outline-dark btn-block" %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-md-4 col-md-offset-4 col-form-label" >
+      <%= f.label :url %>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+      <%= f.text_field :url, class: 'form-control text-input-area', placeholder: "https://www.example.com" %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-md-4 col-md-offset-4 col-form-label" >
+      <%= f.label :status %>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+      <%= f.enum_select :status,{prompt: ""}, {class: "form-control text-center text-input-area pulldown"} %>
+    </div>
+  </div>
+</div>

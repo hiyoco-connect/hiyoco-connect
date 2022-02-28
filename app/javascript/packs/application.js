@@ -9,5 +9,9 @@ import "channels"
 import "bootstrap"
 import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
+
+import "jquery"
+import "cocoon"
+
 Rails.start()
 ActiveStorage.start()

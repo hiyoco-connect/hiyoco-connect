@@ -66,6 +66,7 @@ group :test do
 end
 
 gem 'carrierwave'
+gem 'cocoon'
 gem 'draper'
 gem 'enum_help'
 gem 'jp_prefecture'

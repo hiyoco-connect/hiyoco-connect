@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to @profile, success: t('defaults.messages.created', item: Profile.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_created', item: Profile.model_name.human)
+      flash.now['danger'] = t('defaults.messages.not_created', item: Profile.model_name.human)
       render :new
     end
   end
@@ -32,7 +32,7 @@ class ProfilesController < ApplicationController
   def likes
     @liked_profiles = current_user.liked_profiles
   end
-  
+
   def search; end
 
   private
@@ -46,7 +46,7 @@ class ProfilesController < ApplicationController
                                     :date_of_birth, :blood_type, :siblings_relation, :hobby,
                                     :times_name, :team_dev_will, :twitter_account, :self_introduce,
                                     :avatar, :avatar_cache,
-                                    portfolios_attributes: %i[id profile_id name url status])
+                                    portfolios_attributes: %i[id profile_id name url status _destroy])
   end
 
   def set_profile
