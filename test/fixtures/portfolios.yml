@@ -4,7 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  name       :string           not null
-#  status     :integer          default(0), not null
+#  status     :integer          default("untouched"), not null
 #  url        :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
