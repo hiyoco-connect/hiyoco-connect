@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: %i[show edit update]
-  before_action :set_portfolio, only: %i[show edit]
+  before_action :set_profile, only: %i[show edit]
+  before_action :set_portfolio, only: %i[show edit update]
 
   def new
     @profile = current_user.build_profile
@@ -21,12 +21,20 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to @profile, success: t('defaults.messages.created', item: Profile.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_created', item: Profile.model_name.human)    
+      flash.now['danger'] = t('defaults.messages.not_created', item: Profile.model_name.human)
       render :new
     end
   end
 
-  def update; end
+  def update
+    @profile = current_user.profile
+    if @profile.update(profile_params)
+      redirect_to @profile, success: t('defaults.messages.updated', item: Profile.model_name.human)
+    else
+      flash.now['danger'] = t('defaults.messages.not_updated', item: Profile.model_name.human)
+      render :new
+    end
+  end
 
   private
 
@@ -35,7 +43,7 @@ class ProfilesController < ApplicationController
                                     :date_of_birth, :blood_type, :siblings_relation, :hobby,
                                     :times_name, :team_dev_will, :twitter_account, :self_introduce,
                                     :avatar, :avatar_cache,
-                                    portfolios_attributes: %i[id profile_id name url status])
+                                    portfolios_attributes: %i[id name url status _destroy])
   end
 
   def set_profile
@@ -43,6 +51,6 @@ class ProfilesController < ApplicationController
   end
 
   def set_portfolio
-    @portfolio = @profile.portfolios
+    @portfolio = Profile.find(params[:id]).portfolios
   end
 end

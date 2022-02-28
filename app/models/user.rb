@@ -18,11 +18,9 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :authentications, dependent: :destroy
-  accepts_nested_attributes_for :authentications
+  accepts_nested_attributes_for :authentications, allow_destroy: true, update_only: true
   has_one :profile, dependent: :destroy
-
   def own?(object)
     object.user_id == id
   end
-
 end
