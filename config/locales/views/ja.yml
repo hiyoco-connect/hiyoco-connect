@@ -27,9 +27,8 @@ ja:
     contact:
       title: 'お問い合わせ'
   profiles:
-    new:
+    portfolio_fields:
       delete: '削除'
-      add_form: '+ ポートフォリオ入力欄を追加'
     show:
       like: 'いいね！'
       liked: 'いいね済'
@@ -39,3 +38,6 @@ ja:
       free_word_placeholder: 'フリーワード検索'
       search_btn: '検索'
       reset_search_option: '検索条件をリセット'
+  shared:
+    form:
+      add_form: '+ ポートフォリオ入力欄を追加'
