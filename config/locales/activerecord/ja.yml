@@ -56,6 +56,6 @@ ja:
     portfolio:
       status:
         untouched: '未着手'
-        ongoing: '絶賛作成中！乞うご期待！(MVPリリース含む)'
-        released: 'リリース済み(ドヤァ)'
+        ongoing: '絶賛作成中！(MVPリリース含む)'
+        released: 'リリース済み！'
 
