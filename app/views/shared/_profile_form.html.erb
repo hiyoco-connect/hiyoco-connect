@@ -9,7 +9,7 @@
     </div>
 
     <!-- 自己紹介文 -->
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <span class="text-danger">
         <% if profile.errors.include?(:self_introduce) %>
           <%= profile.errors.full_messages_for(:self_introduce).first %>
@@ -38,9 +38,11 @@
       </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.text_field :name, class: 'form-control text-center', placeholder: '例) ひよこ太郎' %> 
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- 性別 -->
@@ -49,9 +51,11 @@
       <%= f.label :gender, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.enum_select :gender, {}, { class: 'form-control text-center pulldown' } %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- 生年月日 -->
@@ -60,9 +64,11 @@
       <%= f.label :date_of_birth, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.date_field :date_of_birth, class: 'form-control text-center' %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- 期 -->
@@ -79,9 +85,11 @@
       </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.number_field :grade, min: 1, class: 'form-control text-center', placeholder: '例) 1' %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- 出身地 -->
@@ -90,9 +98,11 @@
       <%= f.label :birthplace, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- 居住地 -->
@@ -101,9 +111,11 @@
       <%= f.label :living_place, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- 血液型 -->
@@ -112,9 +124,11 @@
       <%= f.label :blood_type, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.enum_select :blood_type, {}, { class: 'form-control text-center pulldown' } %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
 
@@ -124,9 +138,11 @@
       <%= f.label :siblings_relation, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.enum_select :siblings_relation, {}, { class: 'form-control text-center pulldown' } %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- 趣味 -->
@@ -143,9 +159,11 @@
       </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.text_field :hobby, class: 'form-control text-center', placeholder: '例） 筋トレ、読書、カフェ巡り' %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- times名 -->
@@ -154,9 +172,11 @@
       <%= f.label :times_name, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.text_field :times_name, class: 'form-control text-center', placeholder: '例) times_00期_hiyoco_taro' %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- Twitterアカウント -->
@@ -165,9 +185,11 @@
       <%= f.label :twitter_account, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.text_field :twitter_account, class: 'form-control text-center', placeholder: '例) @hiyoco_taro' %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- チーム開発希望 -->
@@ -176,9 +198,11 @@
       <%= f.label :team_dev_will, class: 'fw-bold col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.enum_select :team_dev_will, {}, { class: 'form-control text-center pulldown' } %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- ポートフォリオ -->
@@ -186,7 +210,8 @@
     <div class="col-3 col-lg-2 text-end fw-bold">
       <%= Portfolio.model_name.human %>
     </div>
-    <div class="col-6"></div>
+    <div class="col-6 col-lg-5"></div>
+    <div class="col-2 col-lg-1"></div>
   </div>
 
   <%= f.fields_for :portfolios, @profile.portfolios.build do |t| %>
@@ -197,7 +222,7 @@
   <div class="row justify-content-center mb-5">
     <div id="detail-association-insertion-point"></div>
 
-    <div class="col-9 col-lg-8 text-end">
+    <div class="col-7 col-lg-6 text-end">
       <%= link_to_add_association t('.add_form'), f, :portfolios,
         class: "btn btn-outline-dark btn-block btn-sm",
         data: {

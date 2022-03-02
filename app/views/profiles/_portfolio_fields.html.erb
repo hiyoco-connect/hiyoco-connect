@@ -3,7 +3,7 @@
 
   <!-- ポートフォリオ名 -->
   <div class="row justify-content-center mb-3">
-  <div class="col-1"></div>
+    <div class="col-lg-2"></div>
     <div class="col-3 col-lg-2 text-end">
       <span class="text-danger">
         <% if @profile.errors.include?(:name) %>
@@ -14,26 +14,29 @@
       <%= f.label :name, class: 'col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.text_field :name, class: 'form-control text-center', placeholder: '例) ひよこコネクト' %>
     </div>
 
     <!-- フォーム削除ボタン -->
      <div class="col-1">
       <%= link_to_remove_association t('.delete'), f, class: "btn btn-outline-dark btn-block btn-sm" %>
-    </div> 
+    </div>
+
+    <div class="col-1 col-lg-2"></div>
   </div>
 
   <!-- URL -->
   <div class="row justify-content-center mb-3">
-
     <div class="col-3 col-lg-2 text-end">
       <%= f.label :url, class: 'col-form-label' %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 col-lg-5">
       <%= f.text_field :url, class: 'form-control text-center', placeholder: '例) https://www.example.com' %>
     </div>
+
+     <div class="col-2 col-lg-1"></div>
   </div>
 
   <!-- 状況 -->
@@ -41,9 +44,12 @@
     <div class="col-3 col-lg-2 text-end" >
       <%= f.label :status, class: 'col-form-label' %>
     </div>
-    <div class="col-6">
+
+    <div class="col-6 col-lg-5">
       <%= f.enum_select :status, {}, { class: 'form-control text-center pulldown' } %>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
 
 </div>
