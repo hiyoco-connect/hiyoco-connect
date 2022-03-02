@@ -43,29 +43,6 @@
     </div>
   </div>
 
-
-  <!-- 出身地 -->
-  <div class="row justify-content-center mb-3">
-    <div class="col-3 col-lg-2 text-end">
-      <%= f.label :birthplace, class: 'fw-bold col-form-label' %>
-    </div>
-
-    <div class="col-6">
-      <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
-    </div>
-  </div>
-
-  <!-- 居住地 -->
-  <div class="row justify-content-center mb-3">
-    <div class="col-3 col-lg-2 text-end">
-      <%= f.label :living_place, class: 'fw-bold col-form-label' %>
-    </div>
-
-    <div class="col-6">
-      <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
-    </div>
-  </div>
-
   <!-- 性別 -->
   <div class="row justify-content-center mb-3">
     <div class="col-3 col-lg-2 text-end">
@@ -104,6 +81,28 @@
 
     <div class="col-6">
       <%= f.number_field :grade, min: 1, class: 'form-control text-center', placeholder: '例) 1' %>
+    </div>
+  </div>
+
+  <!-- 出身地 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :birthplace, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6">
+      <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
+    </div>
+  </div>
+
+  <!-- 居住地 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :living_place, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6">
+      <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
     </div>
   </div>
 
@@ -149,7 +148,6 @@
     </div>
   </div>
 
-
   <!-- times名 -->
   <div class="row justify-content-center mb-3">
     <div class="col-3 col-lg-2 text-end">
@@ -161,17 +159,6 @@
     </div>
   </div>
 
-  <!-- チーム開発希望 -->
-  <div class="row justify-content-center mb-3">
-    <div class="col-3 col-lg-2 text-end">
-      <%= f.label :team_dev_will, class: 'fw-bold col-form-label' %>
-    </div>
-
-    <div class="col-6">
-      <%= f.enum_select :team_dev_will, {}, { class: 'form-control text-center pulldown' } %>
-    </div>
-  </div>
-
   <!-- Twitterアカウント -->
   <div class="row justify-content-center mb-3">
     <div class="col-3 col-lg-2 text-end">
@@ -180,6 +167,17 @@
 
     <div class="col-6">
       <%= f.text_field :twitter_account, class: 'form-control text-center', placeholder: '例) @hiyoco_taro' %>
+    </div>
+  </div>
+
+  <!-- チーム開発希望 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :team_dev_will, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6">
+      <%= f.enum_select :team_dev_will, {}, { class: 'form-control text-center pulldown' } %>
     </div>
   </div>
 
