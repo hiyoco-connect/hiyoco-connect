@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_q, only: %i[index search]
   before_action :set_profile, only: %i[show edit update]
-  before_action :set_portfolio, only: %i[show edit]
+  before_action :set_portfolio, only: %i[show edit update]
 
   def new
     @profile = current_user.build_profile
@@ -22,13 +22,13 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to @profile, success: t('defaults.messages.created', item: Profile.model_name.human)
     else
+      @profile.portfolios.build if @portfolio.blank?
       flash.now['danger'] = t('defaults.messages.not_created', item: Profile.model_name.human)
       render :new
     end
   end
 
   def update
-    @profile = current_user.profile
     if @profile.update(profile_params)
       redirect_to @profile, success: t('defaults.messages.updated', item: Profile.model_name.human)
     else
