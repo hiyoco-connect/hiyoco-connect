@@ -1,7 +1,7 @@
 <header>
 <nav class="navbar bg-primary navbar-expand-md">
   <div class="container-fluid">
-    <%= link_to (t 'defaults.app_title'), root_path, class: 'navbar-brand text-dark' %>
+    <%= link_to (t 'defaults.app_title'), profiles_path, class: 'navbar-brand text-dark' %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,6 +10,12 @@
       <ul class="navbar-nav mr-auto mb-2 mb-md-0">
         <li class="nav-item">
           <%= link_to (t 'defaults.logout'), logout_path, method: :delete, class: "nav-link active text-dark" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to (t 'defaults.mypage'), profile_path(current_user.id), class: "nav-link active text-dark" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to (t 'defaults.profiles_all'), profiles_path, class: "nav-link active text-dark" %>
         </li>
       </ul>
     </div>
