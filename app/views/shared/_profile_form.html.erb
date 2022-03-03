@@ -214,7 +214,7 @@
     <div class="col-2 col-lg-1"></div>
   </div>
 
-  <%= f.fields_for :portfolios, @profile.portfolios.build do |t| %>
+  <%= f.fields_for :portfolios do |t| %>
     <%= render 'profiles/portfolio_fields', f: t, profile: profile %>
   <% end %>
   
