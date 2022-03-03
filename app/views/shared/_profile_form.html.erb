@@ -1,0 +1,241 @@
+<%= form_with( model: profile, builder: ProfilesHelper::ProfileFormHelper ,local: true) do |f| %>
+  <div class="row mb-5 justify-content-center">
+    <!-- プロフィール画像 -->
+    <div class="col-4 fw-bold">
+      <%= f.label :avatar, class: 'form-label' %>
+      <div>
+        <%= f.file_field :avatar, class: 'form-control' %>
+      </div>
+    </div>
+
+    <!-- 自己紹介文 -->
+    <div class="col-6 col-lg-5">
+      <span class="text-danger">
+        <% if profile.errors.include?(:self_introduce) %>
+          <%= profile.errors.full_messages_for(:self_introduce).first %>
+        <% end %>
+      </span>
+
+      <div class="fw-bold form-label">
+        <%= f.label :self_introduce %><span class="text-danger">*</span>
+      </div>
+      <%= f.text_area :self_introduce, rows: 10, class: 'form-control', placeholder: '特徴的な自己紹介を書くといいかも！' %> 
+    </div>
+
+  </div>
+
+  <!-- 名前 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2">
+      <div class="fw-bold col-form-label text-end">
+        <%= f.label :name %><span class="text-danger">*</span>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <span class="text-danger">
+        <% if profile.errors.include?(:name) %>
+          <%= profile.errors.full_messages_for(:name).first %>
+        <% end %>
+      </span>
+
+      <%= f.text_field :name, class: 'form-control text-center', placeholder: '例) ひよこ太郎' %> 
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- 性別 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :gender, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.enum_select :gender, {}, { class: 'form-control text-center pulldown' } %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- 生年月日 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :date_of_birth, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.date_field :date_of_birth, class: 'form-control text-center' %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- 期 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2">
+      <div class="fw-bold col-form-label text-end">
+        <%= f.label :grade %><span class="text-danger">*</span>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <span class="text-danger">
+        <% if profile.errors.include?(:grade) %>
+          <%= profile.errors.full_messages_for(:grade).first %>
+        <% end %>
+      </span>
+
+      <%= f.number_field :grade, min: 1, class: 'form-control text-center', placeholder: '例) 1' %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- 出身地 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :birthplace, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- 居住地 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :living_place, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- 血液型 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :blood_type, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.enum_select :blood_type, {}, { class: 'form-control text-center pulldown' } %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+
+  <!-- 兄弟関係 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :siblings_relation, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.enum_select :siblings_relation, {}, { class: 'form-control text-center pulldown' } %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- 趣味 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2">
+      <div class="fw-bold col-form-label text-end">
+        <%= f.label :hobby %><span class="text-danger">*</span>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <span class="text-danger">
+        <% if profile.errors.include?(:hobby) %>
+          <%= profile.errors.full_messages_for(:hobby).first %>
+        <% end %>
+      </span>
+
+      <%= f.text_field :hobby, class: 'form-control text-center', placeholder: '例） 筋トレ、読書、カフェ巡り' %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- times名 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :times_name, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.text_field :times_name, class: 'form-control text-center', placeholder: '例) times_00期_hiyoco_taro' %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- Twitterアカウント -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :twitter_account, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.text_field :twitter_account, class: 'form-control text-center', placeholder: '例) @hiyoco_taro' %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- チーム開発希望 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end">
+      <%= f.label :team_dev_will, class: 'fw-bold col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <%= f.enum_select :team_dev_will, {}, { class: 'form-control text-center pulldown' } %>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <!-- ポートフォリオ -->
+  <div class="row justify-content-center mb-2">
+    <div class="col-3 col-lg-2 text-end fw-bold">
+      <%= Portfolio.model_name.human %>
+    </div>
+    <div class="col-6 col-lg-5"></div>
+    <div class="col-2 col-lg-1"></div>
+  </div>
+
+  <%= f.fields_for :portfolios do |t| %>
+    <%= render 'profiles/portfolio_fields', f: t, profile: profile %>
+  <% end %>
+  
+  <!-- ポートフォリオ入力欄の追加ボタン -->
+  <div class="row justify-content-center mb-5">
+    <div id="detail-association-insertion-point"></div>
+
+    <div class="col-7 col-lg-6 text-end">
+      <%= link_to_add_association t('.add_form'), f, :portfolios,
+        class: "btn btn-outline-dark btn-block btn-sm",
+        data: {
+        association_insertion_node: '#detail-association-insertion-point',
+        association_insertion_method: 'after'
+      } %>
+    </div>
+  </div>
+
+  <!-- 作成ボタン -->
+  <div class="row justify-content-center">
+    <div class="d-grid gap-2 col-2 col-lg-1 text-end">
+      <%= f.submit "作成！", class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %> 

@@ -39,5 +39,5 @@ ja:
       search_btn: '検索'
       reset_search_option: '検索条件をリセット'
   shared:
-    form:
+    profile_form:
       add_form: '+ ポートフォリオ入力欄を追加'
