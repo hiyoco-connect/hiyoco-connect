@@ -1,197 +1,280 @@
-<div class="container form-container my-5">
-  <div class="row mt-4 avatar-self-introduce">
-    <div class="col-md-6 col-md-offset-6 avatar-label">
+<div class="container my-5">
+
+  <div class="row justify-content-center mb-5">
+    <div class="col-4 text-center">
+      <!-- プロフィール画像 -->
       <div>
-        <%=image_tag @profile.decorate.avatar_url, class: 'rounded-circle img-fluid mx-auto d-block', size: '200x200' %> 
+        <%=image_tag @profile.decorate.avatar_url, class: 'rounded-circle img-fluid', size: '200x200' %> 
       </div>
-      <div class="mt-3 col-md-5 col-md-offset-5 grade-label">
-        <%= @profile.grade%>期
+
+      <!-- 期 -->
+      <div class="mt-2 fw-bold">
+        <%= @profile.grade %>期
       </div>
-      <div class="d-flex justify-content-center">
-        <div class="my-1 profile-name">
-          <%= @profile.name %>
-        </div>
-        <%if @profile.twitter_account.present?%>
-          <div class="my-2">
-          <%=link_to "https://twitter.com/#{@profile.twitter_account.delete('@')}", target: :_blank, rel: "noopener noreferrer" do%>
-            <i class="fa-brands fa-twitter sns-icon" style="color: deepskyblue;"></i>
-          <%end%>
-          </div>
-        <%end%>
-        <%=link_to "https://github.com/#{@profile.user.github_name}", target: :_blank, rel: "noopener noreferrer" do %>
-          <div class="my-2">
-            <i class="fab fa-github sns-icon text-dark"></i>
-          </div>
+
+      <div class="mt-1 fs-4 fw-bold">
+        <!-- 名前 -->
+        <%= @profile.name %>
+
+        <!-- Twitterアイコン -->
+        <% if @profile.twitter_account.present? %>
+          <%= link_to "https://twitter.com/#{@profile.twitter_account.delete('@')}", target: :_blank, rel: "noopener noreferrer", class: 'text-decoration-none' do %>
+            <i class="fa-brands fa-twitter" style="color: deepskyblue;"></i>
+          <% end %>
         <% end %>
 
+        <!-- GitHubアイコン -->
+        <%= link_to "https://github.com/#{@profile.user.github_name}", target: :_blank, rel: "noopener noreferrer" do %>
+          <i class="fab fa-github text-dark"></i>
+        <% end %>
       </div>
-      <div class="d-flex justify-content-center">
+
+      <!-- いいね！ボタン -->
+      <div class="mt-1">
         <% unless current_user.own?(@profile) %>
-          <%= render 'like_button', profile: @profile  %>
+          <%= render 'like_button', profile: @profile %>
         <% end %>
       </div>
     </div>
-    <div class="mb-5 col-md-5 col-md-offset-5">
-      <div class="col">
-        <p class="self-introduce-label">自己紹介文</p>
-      </div>
-      <div class="col text-input-area self-introduce">
-        <%= @profile.self_introduce %>
-      </div>
-    </div>
-  </div>
-<div class="profiles-container">
-  <div class="mb-3 row">
-    <div class="col-md-6 col-md-offset-6 profile-label">
-      <%= (t 'activerecord.attributes.profile.gender')%>
-    </div>
-    <div class="col">
-      <p class="text-input-area">
-        <%= @profile.gender_i18n %>
-      </p>
-    </div>
-  </div>
-  <div class="mb-3 row">
-    <div class="col-md-6 col-md-offset-6 profile-label">
-      <%= (t 'activerecord.attributes.profile.date_of_birth')%>
-    </div>
-    <div class="col">
-      <p class="text-input-area">
-        <%= @profile.date_of_birth%>
-      </p>
-    </div>
-  </div>
-<div class="mb-3 row">
-  <div class="col-md-6 col-md-offset-6 profile-label">
-    <%= (t 'activerecord.attributes.profile.blood_type')%>
-  </div>
-  <div class="col">
-    <p class="text-input-area">
-      <%= @profile.blood_type_i18n%>
-    </p>
-  </div>
-</div>
-<div class="mb-3 row">
-  <div class="col-md-6 col-md-offset-6 profile-label">
-    <%= (t 'activerecord.attributes.profile.siblings_relation')%>
-  </div>
-  <div class="col">
-    <p class="text-input-area">
-      <%= @profile.siblings_relation_i18n%>
-    </p>
-  </div>
-</div>
-<div class="mb-3 row">
-    <div class="col-md-6 col-md-offset-6 profile-label">
-      <%= (t 'activerecord.attributes.profile.birthplace')%>
-    </div>
-    <div class="col">
-      <p class="text-input-area">
-        <%= @profile.birthplace.name %>
-      </p>
-    </div>
-  </div>
-<div class="mb-3 row">
-  <div class="col-md-6 col-md-offset-6 profile-label">
-    <%= (t 'activerecord.attributes.profile.living_place')%>
-  </div>
-  <div class="col">
-    <p class="text-input-area">
-      <%= @profile.living_place.name %>
-    </p>
-  </div>
-</div>
-<div class="mb-3 row">
-  <div class="col-md-6 col-md-offset-6 profile-label">
-    <%= (t 'activerecord.attributes.profile.hobby')%>
-  </div>
-  <div class="col">
-    <p class="text-input-area">
-      <%= @profile.hobby%>
-    </p>
-  </div>
-</div>
-<div class="mb-3 row">
-  <div class="col-md-6 col-md-offset-6 profile-label">
-    <%= (t 'activerecord.attributes.profile.times_name')%>
-  </div>
-  <div class="col">
-    <p class="text-input-area">
-      <%if @profile.times_name.present?%>
-        <%= @profile.times_name %>
-      <%else%>
-        <%= t('defaults.not_answered')%>
-      <%end%>
-    </p>
-  </div>
-</div>
-<div class="mb-3 row">
-  <div class="col-md-6 col-md-offset-6 profile-label">
-    <%= (t 'activerecord.attributes.profile.team_dev_will')%>
-  </div>
-  <div class="col">
-    <p class="text-input-area">
-      <%= @profile.team_dev_will_i18n %>
-    </p>
-  </div>
-</div>
 
-<div class="mb-3 row">
-  <div class="col-md-6 col-md-offset-6 profile-label">
-    <%= (t 'activerecord.attributes.profile.twitter_account')%>
-  </div>
-  <div class="col">
-    <p class="text-input-area">
-    <%if @profile.twitter_account.present?%>
-      <%= @profile.twitter_account %>
-    <%else%>
-      <%= t('defaults.not_answered')%>
-    <%end%>
-    </p>
-  </div>
-</div>
-<% @portfolio.each do |pf|%>
-  <div class="mb-3 row">
-    <div class="col-md-6 col-md-offset-6 profile-label">
-      <%= (t 'activerecord.attributes.portfolio.name')%>
-    </div>
-    <div class="col">
-      <p class="text-input-area">
-         <%if pf.name.present?%>
-          <%= pf.name %>
-        <%else%>
-          <%= t('defaults.not_answered')%>
-        <%end%>
-      </p>
+    <!-- 自己紹介文 -->
+    <div class="col-6">
+      <div class="fw-bold form-label">自己紹介文</div>
+
+      <div class="form-control">
+        <%= simple_format(@profile.self_introduce) %>
+      </div>
     </div>
   </div>
-  <div class="mb-3 row">
-    <div class="col-md-6 col-md-offset-6 profile-label">
-      <%= (t 'activerecord.attributes.portfolio.url')%>
+
+  <!-- 性別 -->
+  <% if @profile.gender != 'unanswered' %>
+    <div class="row justify-content-center mb-3">
+      <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+        <%= (t 'activerecord.attributes.profile.gender') %>
+      </div>
+
+      <div class="col-6 col-lg-5">
+        <div class="text-center form-control">
+          <%= @profile.gender_i18n %>
+        </div>
+      </div>
+
+      <div class="col-2 col-lg-1"></div>
     </div>
-    <div class="col">
-      <p class="text-input-area">
-        <%if pf.url.present?%>
-          <%= pf.url %>
-        <%else%>
-          <%= t('defaults.not_answered')%>
-        <%end%>
-      </p>
+  <% end %>
+
+  <!-- 生年月日 -->
+  <% if @profile.date_of_birth %>
+    <div class="row justify-content-center mb-3">
+      <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+        <%= (t 'activerecord.attributes.profile.date_of_birth') %>
+      </div>
+
+      <div class="col-6 col-lg-5">
+        <div class="text-center form-control">
+          <%= @profile.date_of_birth %>
+        </div>
+      </div>
+
+      <div class="col-2 col-lg-1"></div>
     </div>
+  <% end %>
+
+  <!-- 血液型 -->
+  <% if @profile.blood_type != 'unanswered' %>
+    <div class="row justify-content-center mb-3">
+      <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+        <%= (t 'activerecord.attributes.profile.blood_type') %>
+      </div>
+
+      <div class="col-6 col-lg-5">
+        <div class="text-center form-control">
+          <%= @profile.blood_type_i18n %>
+        </div>
+      </div>
+
+      <div class="col-2 col-lg-1"></div>
+    </div>
+  <% end %>
+
+  <!-- 兄弟関係 -->
+  <% if @profile.siblings_relation != 'unanswered' %>
+    <div class="row justify-content-center mb-3">
+      <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+        <%= (t 'activerecord.attributes.profile.siblings_relation') %>
+      </div>
+
+      <div class="col-6 col-lg-5">
+        <div class="text-center form-control">
+          <%= @profile.siblings_relation_i18n %>
+        </div>
+      </div>
+
+      <div class="col-2 col-lg-1"></div>
+    </div>
+  <% end %>
+
+
+  <!-- 出身地 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+      <%= (t 'activerecord.attributes.profile.birthplace') %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <div class="text-center form-control">
+        <%= @profile.birthplace.name %>
+      </div>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
-  <div class="mb-3 row">
-    <div class="col-md-6 col-md-offset-6 profile-label">
-       <%= (t 'activerecord.attributes.portfolio.status')%>
+
+  <!-- 居住地 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+      <%= (t 'activerecord.attributes.profile.living_place') %>
     </div>
-    <div class="col">
-      <p class="text-input-area">
-        <%= pf.status_i18n %>
-      </p>
+
+    <div class="col-6 col-lg-5">
+      <div class="text-center form-control">
+        <%= @profile.living_place.name %>
+      </div>
     </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
-<%end%>
-</div>
-  <div class="crud-btn">
-    <%= render 'shared/crud_menus', profile: @profile if current_user.own?(@profile) %>
+
+
+  <!-- 趣味 -->
+  <div class="row justify-content-center mb-3">
+    <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+      <%= (t 'activerecord.attributes.profile.hobby') %>
+    </div>
+
+    <div class="col-6 col-lg-5">
+      <div class="text-center form-control">
+        <%= @profile.hobby %>
+      </div>
+    </div>
+
+    <div class="col-2 col-lg-1"></div>
   </div>
+
+  <!-- times名 -->
+  <% if @profile.times_name.present? %>
+    <div class="row justify-content-center mb-3">
+      <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+        <%= (t 'activerecord.attributes.profile.times_name') %>
+      </div>
+
+      <div class="col-6 col-lg-5">
+        <div class="text-center form-control">
+          <%= @profile.times_name %>
+        </div>
+      </div>
+
+      <div class="col-2 col-lg-1"></div>
+    </div>
+  <% end %>
+
+  <!-- チーム開発希望 -->
+  <% if @profile.team_dev_will != 'unanswered' %>
+    <div class="row justify-content-center mb-3">
+      <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+        <%= (t 'activerecord.attributes.profile.team_dev_will')%>
+      </div>
+
+      <div class="col-6 col-lg-5">
+        <div class="text-center form-control">
+          <%= @profile.team_dev_will_i18n %>
+        </div>
+      </div>
+
+      <div class="col-2 col-lg-1"></div>
+    </div>
+  <% end %>
+
+
+  <!-- ポートフォリオ -->
+  <% if @profile.portfolios.present? %>
+    <div class="row justify-content-center mb-2">
+      <div class="col-3 col-lg-2 text-end fw-bold col-form-label">
+        <%= (t 'activerecord.models.portfolio')%>
+      </div>
+
+      <div class="col-6 col-lg-5"></div>
+      <div class="col-2 col-lg-1"></div>
+    </div>
+
+    <% @portfolio.each do |pf|%>
+
+      <!-- ポートフォリオ名 -->
+      <div class="row justify-content-center mb-3">
+        <div class="col-3 col-lg-2 text-end col-form-label">
+          <%= (t 'activerecord.attributes.portfolio.name')%>
+        </div>
+
+        <div class="col-6 col-lg-5">
+          <div class="text-center form-control">
+            <%= pf.name %>
+
+          </div>
+        </div>
+
+        <div class="col-2 col-lg-1"></div>
+      </div>
+
+      <!-- URL -->
+      <div class="row justify-content-center mb-3">
+        <div class="col-3 col-lg-2 text-end col-form-label">
+          <%= (t 'activerecord.attributes.portfolio.url')%>
+        </div>
+
+        <div class="col-6 col-lg-5">
+          <div class="text-center form-control">
+            <%if pf.url.present?%>
+              <%= pf.url %>
+            <%else%>
+              <%= t('defaults.not_answered')%>
+            <%end%>
+          </div>
+        </div>
+
+        <div class="col-2 col-lg-1"></div>
+      </div>
+
+      <!-- 状況 -->
+      <div class="row justify-content-center mb-3">
+        <div class="col-3 col-lg-2 text-end col-form-label">
+          <%= (t 'activerecord.attributes.portfolio.status')%>
+        </div>
+
+        <div class="col-6 col-lg-5">
+          <div class="text-center form-control">
+            <%= pf.status_i18n %>
+          </div>
+        </div>
+
+        <div class="col-2 col-lg-1"></div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <!-- 編集・削除ボタン -->
+  <% if current_user.own?(@profile) %>
+    <div class="row text-center mt-5">
+      <div>
+        <%= link_to edit_profile_path(@profile), class: 'text-decoration-none' do %>
+          <div class="btn btn-success"><i class="fas fa-pen"></i> 編集</div>
+        <% end %>
+
+        <%= link_to profile_path(@profile), method: :delete, data: { confirm: t('defaults.messages.delete_confirm') } do %>
+          <div class="btn btn-danger ms-1"><i class="fa fa-trash"></i></div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
 </div>

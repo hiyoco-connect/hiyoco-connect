@@ -1,6 +1,6 @@
 <%= link_to profile_like_path(@profile), method: :delete, class: 'text-decoration-none' do %>
-  <button class="btn d-flex justify-content-center rounded-pill text-dark unlike-button">
+  <button class="btn rounded-pill text-dark unlike-button">
     <span><%= t('profiles.show.liked') %></span>
-    <span><%= image_tag 'hiyoco.png', size: '26x26', class: 'pb-1' %></span>
+    <span><%= image_tag 'hiyoco.png', size: '26x26' %></span>
   </button>
 <% end %>
