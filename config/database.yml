@@ -69,3 +69,5 @@ production:
   database: hiyoco_connect_production
   username: hiyoco_connect
   password: <%= ENV['HIYOCO_CONNECT_DATABASE_PASSWORD'] %>
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV['RAILS_MAX_THREADS'] || 5 %>
