@@ -62,6 +62,6 @@ class ProfilesController < ApplicationController
   end
 
   def set_portfolio
-    @portfolio = Profile.find(params[:id]).portfolios
+    @portfolio = @profile.portfolios
   end
 end
