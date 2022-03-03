@@ -27,18 +27,18 @@
   <!-- 名前 -->
   <div class="row justify-content-center mb-3">
     <div class="col-3 col-lg-2">
-      <span class="text-danger">
-        <% if profile.errors.include?(:name) %>
-          <%= profile.errors.full_messages_for(:name).first %>
-        <% end %>
-      </span>
-
       <div class="fw-bold col-form-label text-end">
         <%= f.label :name %><span class="text-danger">*</span>
       </div>
     </div>
 
     <div class="col-6 col-lg-5">
+      <span class="text-danger">
+        <% if profile.errors.include?(:name) %>
+          <%= profile.errors.full_messages_for(:name).first %>
+        <% end %>
+      </span>
+
       <%= f.text_field :name, class: 'form-control text-center', placeholder: '例) ひよこ太郎' %> 
     </div>
 
@@ -74,18 +74,18 @@
   <!-- 期 -->
   <div class="row justify-content-center mb-3">
     <div class="col-3 col-lg-2">
-      <span class="text-danger">
-        <% if profile.errors.include?(:grade) %>
-          <%= profile.errors.full_messages_for(:grade).first %>
-        <% end %>
-      </span>
-
       <div class="fw-bold col-form-label text-end">
         <%= f.label :grade %><span class="text-danger">*</span>
       </div>
     </div>
 
     <div class="col-6 col-lg-5">
+      <span class="text-danger">
+        <% if profile.errors.include?(:grade) %>
+          <%= profile.errors.full_messages_for(:grade).first %>
+        <% end %>
+      </span>
+
       <%= f.number_field :grade, min: 1, class: 'form-control text-center', placeholder: '例) 1' %>
     </div>
 
@@ -148,18 +148,18 @@
   <!-- 趣味 -->
   <div class="row justify-content-center mb-3">
     <div class="col-3 col-lg-2">
-      <span class="text-danger">
-        <% if profile.errors.include?(:hobby) %>
-          <%= profile.errors.full_messages_for(:hobby).first %>
-        <% end %>
-      </span>
-
       <div class="fw-bold col-form-label text-end">
         <%= f.label :hobby %><span class="text-danger">*</span>
       </div>
     </div>
 
     <div class="col-6 col-lg-5">
+      <span class="text-danger">
+        <% if profile.errors.include?(:hobby) %>
+          <%= profile.errors.full_messages_for(:hobby).first %>
+        <% end %>
+      </span>
+
       <%= f.text_field :hobby, class: 'form-control text-center', placeholder: '例） 筋トレ、読書、カフェ巡り' %>
     </div>
 
