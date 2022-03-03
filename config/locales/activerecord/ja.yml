@@ -16,6 +16,7 @@ ja:
         birthplace: '出身地'
         living_place: '居住地'
         date_of_birth: '生年月日'
+        age: '年齢'
         blood_type: '血液型'
         siblings_relation: '兄弟関係'
         hobby: '趣味'
