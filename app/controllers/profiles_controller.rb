@@ -39,6 +39,7 @@ class ProfilesController < ApplicationController
 
   def likes
     @liked_profiles = current_user.liked_profiles
+    @connect_users = current_user.connect
   end
 
   def search; end

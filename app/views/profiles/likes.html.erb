@@ -1,7 +1,17 @@
+<!--仮UI-->
+<h2>いいねしたポケモン</h2>
 <table>
   <% @liked_profiles.each do |profile| %>
     <tr>
       <td><%= profile.name %></td>
+    </tr>
+  <% end %>
+</table>
+<h2>コネクトしたポケモン</h2>
+<table>
+  <% @connect_users.each do |connect_user| %>
+    <tr>
+      <td><%= connect_user.profile.name %></td>
     </tr>
   <% end %>
 </table>
