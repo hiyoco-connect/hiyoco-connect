@@ -1,17 +1,18 @@
-<!--仮UI-->
-<h2>いいねしたポケモン</h2>
-<table>
-  <% @liked_profiles.each do |profile| %>
-    <tr>
-      <td><%= profile.name %></td>
-    </tr>
-  <% end %>
-</table>
-<h2>コネクトしたポケモン</h2>
-<table>
-  <% @connect_users.each do |connect_user| %>
-    <tr>
-      <td><%= connect_user.profile.name %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="container-fluid">
+  <div class="col-10 offset-1 py-5">
+    <div class="row">
+      <h2>コネクトしたポケモン</h2>
+      <% if @connect_profiles.present? %>
+        <%= render @connect_profiles %>
+      <% else %>
+        <p><%= t '.profile_not_found_message' %></p>
+      <% end %>
+      <h2>いいね!したポケモン</h2>
+      <% if @liked_profiles.present? %>
+        <%= render @liked_profiles %>
+      <% else %>
+        <p><%= t '.profile_not_found_message' %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -44,6 +44,6 @@ class User < ApplicationRecord
   end
 
   def connect
-    User.where(id: passive_likes.select(:user_id)).where(id: liked_profiles.select(:profile_id))
+    Profile.where(id: liked_profiles.select(:profile_id)).where(id: passive_likes.select(:user_id))
   end
 end
