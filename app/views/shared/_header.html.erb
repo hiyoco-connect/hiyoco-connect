@@ -15,7 +15,7 @@
             <%= link_to (t 'defaults.mypage'), profile_path(current_user.id), class: "nav-link active text-dark" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'いいね！', likes_profiles_path, class: "nav-link active text-dark" %>
+            <%= link_to (t 'defaults.like'), likes_profiles_path, class: "nav-link active text-dark" %>
           </li>
           <li class="nav-item">
             <%= link_to (t 'defaults.logout'), logout_path, method: :delete, class: "nav-link active text-dark" %>
