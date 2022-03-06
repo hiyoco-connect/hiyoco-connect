@@ -21,7 +21,8 @@ class User < ApplicationRecord
   has_many :authentications, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_profiles, through: :likes, source: :profile
-  has_many :passive_likes, class_name: "Like", foreign_key: "profile_id", dependent: :destroy
+  has_many :passive_likes, class_name: 'Like', foreign_key: 'profile_id',
+                           inverse_of: 'profile', dependent: :destroy
 
   has_one :profile, dependent: :destroy
 
