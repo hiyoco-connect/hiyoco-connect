@@ -38,7 +38,8 @@ class ProfilesController < ApplicationController
   end
 
   def likes
-    @liked_profiles = current_user.liked_profiles
+    @liked_profiles = current_user.liked_profiles.includes(:user).grade_desc.name_asc
+    @connect_profiles = current_user.connect.includes(:user).grade_desc.name_asc
   end
 
   def search; end
