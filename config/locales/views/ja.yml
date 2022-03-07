@@ -11,6 +11,8 @@ ja:
     login: 'ログイン'
     logout: 'ログアウト'
     not_answered: '未回答'
+    mypage: 'マイページ'
+    profiles_all: 'プロフィール一覧'
   oauths:
     callback:
       to_login: 'ログインする'
