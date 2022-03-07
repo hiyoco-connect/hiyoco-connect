@@ -46,7 +46,10 @@ ja:
       like: 'いいね！したユーザー'
       connect_profile_not_found_message: 'まだコネクトしていません…'
       like_profile_not_found_message: 'まだいいね！していません…'
-
   shared:
     profile_form:
       add_form: '+ ポートフォリオ入力欄を追加'
+  helpers:
+    submit:
+      create: '作成！'
+      update: '更新！'
