@@ -11,7 +11,7 @@ ja:
     login: 'ログイン'
     logout: 'ログアウト'
     not_answered: '未回答'
-    mypage: 'マイページ'
+    myprofile: 'マイページ'
     profiles_all: 'プロフィール一覧'
     like: 'いいね！'
   oauths:

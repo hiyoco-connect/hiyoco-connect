@@ -12,7 +12,7 @@
             <%= link_to (t 'defaults.profiles_all'), profiles_path, class: "nav-link active text-dark" %>
           </li>
           <li class="nav-item">
-            <%= link_to (t 'defaults.mypage'), profile_path(current_user.id), class: "nav-link active text-dark" %>
+            <%= link_to (t 'defaults.myprofile'), profile_path(current_user.profile.id), class: "nav-link active text-dark" if current_user.profile.present?%>
           </li>
           <li class="nav-item">
             <%= link_to (t 'defaults.like'), likes_profiles_path, class: "nav-link active text-dark" %>
