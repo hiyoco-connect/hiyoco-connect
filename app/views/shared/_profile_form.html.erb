@@ -7,7 +7,7 @@
           <%= profile.errors.full_messages_for(:avatar).first %>
         <% end %>
       </span>
-      
+
       <%= f.label :avatar, class: 'form-label' %>
       <div>
         <%= f.file_field :avatar, class: 'form-control' %>
@@ -241,7 +241,7 @@
   <!-- 作成ボタン -->
   <div class="row justify-content-center">
     <div class="d-grid gap-2 col-2 col-lg-1 text-end">
-      <%= f.submit nil, class: 'btn btn-success' %>
+      <%= f.submit class: 'btn btn-success' %>
     </div>
   </div>
 <% end %> 
