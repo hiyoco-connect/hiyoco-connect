@@ -1,17 +1,17 @@
 <%= form_with( model: profile, builder: ProfilesHelper::ProfileFormHelper ,local: true) do |f| %>
   <div class="row mb-5 justify-content-center">
     <!-- プロフィール画像 -->
-    <div class="col-4 fw-bold">
+    <div class="col-4">
       <span class="text-danger">
         <% if profile.errors.include?(:avatar) %>
           <%= profile.errors.full_messages_for(:avatar).first %>
         <% end %>
       </span>
 
-      <%= f.label :avatar, class: 'form-label' %>
-      <div>
-        <%= f.file_field :avatar, class: 'form-control' %>
+      <div class="fw-bold">
+        <%= f.label :avatar, class: 'form-label' %>
       </div>
+      <%= f.file_field :avatar, class: 'form-control' %>
     </div>
 
     <!-- 自己紹介文 -->
