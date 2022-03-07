@@ -43,3 +43,7 @@ ja:
   shared:
     profile_form:
       add_form: '+ ポートフォリオ入力欄を追加'
+  helpers:
+    submit:
+      create: '作成！'
+      update: '更新！'
