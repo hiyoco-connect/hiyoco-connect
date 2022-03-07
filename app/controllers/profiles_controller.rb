@@ -41,6 +41,7 @@ class ProfilesController < ApplicationController
     current_user.profile.destroy
     redirect_to root_path, success: t('defaults.messages.deleted', item: Profile.model_name.human)
   end
+
   def likes
     @liked_profiles = current_user.liked_profiles.includes(:user).grade_desc.name_asc
     @connect_profiles = current_user.connect.includes(:user).grade_desc.name_asc
