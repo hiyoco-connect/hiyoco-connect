@@ -2,6 +2,12 @@
   <div class="row mb-5 justify-content-center">
     <!-- プロフィール画像 -->
     <div class="col-4 fw-bold">
+      <span class="text-danger">
+        <% if profile.errors.include?(:avatar) %>
+          <%= profile.errors.full_messages_for(:avatar).first %>
+        <% end %>
+      </span>
+      
       <%= f.label :avatar, class: 'form-label' %>
       <div>
         <%= f.file_field :avatar, class: 'form-control' %>
