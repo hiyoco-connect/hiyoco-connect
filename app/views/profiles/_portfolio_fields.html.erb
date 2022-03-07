@@ -5,16 +5,16 @@
   <div class="row justify-content-center mb-3">
     <div class="col-lg-2"></div>
     <div class="col-3 col-lg-2 text-end">
+      <%= f.label :name, class: 'col-form-label' %>
+    </div>
+
+    <div class="col-6 col-lg-5">
       <span class="text-danger">
         <% if @profile.errors.include?(:name) %>
           <%= @profile.errors.full_messages_for(:name).first %>
         <% end %>
       </span>
 
-      <%= f.label :name, class: 'col-form-label' %>
-    </div>
-
-    <div class="col-6 col-lg-5">
       <%= f.text_field :name, class: 'form-control text-center', placeholder: '例) ひよこコネクト' %>
     </div>
 

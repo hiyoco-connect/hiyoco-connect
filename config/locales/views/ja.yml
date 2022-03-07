@@ -13,6 +13,7 @@ ja:
     not_answered: '未回答'
     mypage: 'マイページ'
     profiles_all: 'プロフィール一覧'
+    like: 'いいね！'
   oauths:
     callback:
       to_login: 'ログインする'
@@ -40,6 +41,11 @@ ja:
       free_word_placeholder: 'フリーワード検索'
       search_btn: '検索'
       reset_search_option: '検索条件をリセット'
+    likes:
+      connect: 'コネクトしたユーザー'
+      like: 'いいね！したユーザー'
+      connect_profile_not_found_message: 'まだコネクトしていません…'
+      like_profile_not_found_message: 'まだいいね！していません…'
   shared:
     profile_form:
       add_form: '+ ポートフォリオ入力欄を追加'

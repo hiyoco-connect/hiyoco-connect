@@ -1,7 +1,18 @@
-<table>
-  <% @liked_profiles.each do |profile| %>
-    <tr>
-      <td><%= profile.name %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="container-fluid">
+  <div class="col-10 offset-1 py-5">
+    <div class="row">
+      <h2><%= t '.connect' %></h2>
+      <% if @connect_profiles.present? %>
+        <%= render @connect_profiles %>
+      <% else %>
+        <p><%= t 'connect_profile_not_found_message' %></p>
+      <% end %>
+      <h2><%= t '.like' %></h2>
+      <% if @liked_profiles.present? %>
+        <%= render @liked_profiles %>
+      <% else %>
+        <p><%= t '.like_profile_not_found_message' %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -9,13 +9,13 @@ class OauthsController < ApplicationController
     provider = auth_params[:provider]
     @user = login_from(provider)
     if @user
-      redirect_to root_path, success: t('.success')
+      redirect_to profiles_path, success: t('.success')
     else
       begin
         @user = create_from(provider)
         reset_session
         auto_login(@user)
-        redirect_to root_path, success: t('.success')
+        redirect_to profiles_path, success: t('.success')
       rescue StandardError
         redirect_to root_path, danger: t('.fail')
       end

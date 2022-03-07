@@ -21,6 +21,9 @@ class User < ApplicationRecord
   has_many :authentications, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_profiles, through: :likes, source: :profile
+  has_many :passive_likes, class_name: 'Like', foreign_key: 'profile_id',
+                           inverse_of: 'profile', dependent: :destroy
+
   has_one :profile, dependent: :destroy
 
   accepts_nested_attributes_for :authentications
@@ -39,5 +42,9 @@ class User < ApplicationRecord
 
   def own?(object)
     object.user_id == id
+  end
+
+  def connect
+    Profile.where(id: liked_profiles.select(:profile_id)).where(id: passive_likes.select(:user_id))
   end
 end
