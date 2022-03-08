@@ -8,21 +8,19 @@ Rails.application.config.sorcery.submodules = [:external]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
-  if Rails.env.development?
-    # development
-    config.external_providers = [:github]
-    config.github.key = Rails.application.credentials.dig(:github, :key)
-    config.github.secret = Rails.application.credentials.dig(:github, :secret)
-    config.github.callback_url = Rails.application.credentials.dig(:github, :callback_url)
-    config.github.user_info_mapping = { email: 'email', github_name: 'login',
-                                        remote_avatar_url: 'avatar_url' }
-    config.github.scope = 'user:email'
-  else
-  # production
+  if Rails.env.production?
     config.external_providers = [:github]
     config.github.key = Rails.application.credentials.dig(:github, :production_key)
     config.github.secret = Rails.application.credentials.dig(:github, :production_secret)
     config.github.callback_url = Rails.application.credentials.dig(:github, :production_callback_url)
+    config.github.user_info_mapping = { email: 'email', github_name: 'login',
+                                        remote_avatar_url: 'avatar_url' }
+    config.github.scope = 'user:email'
+  else
+    config.external_providers = [:github]
+    config.github.key = Rails.application.credentials.dig(:github, :key)
+    config.github.secret = Rails.application.credentials.dig(:github, :secret)
+    config.github.callback_url = Rails.application.credentials.dig(:github, :callback_url)
     config.github.user_info_mapping = { email: 'email', github_name: 'login',
                                         remote_avatar_url: 'avatar_url' }
     config.github.scope = 'user:email'
