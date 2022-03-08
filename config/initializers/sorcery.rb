@@ -8,13 +8,25 @@ Rails.application.config.sorcery.submodules = [:external]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
-  config.external_providers = [:github]
-  config.github.key = Rails.application.credentials.dig(:github, :key)
-  config.github.secret = Rails.application.credentials.dig(:github, :secret)
-  config.github.callback_url = Rails.application.credentials.dig(:github, :callback_url)
-  config.github.user_info_mapping = { email: 'email', github_name: 'login',
-                                      remote_avatar_url: 'avatar_url' }
-  config.github.scope = 'user:email'
+  if Rails.env.development?
+    # development
+    config.external_providers = [:github]
+    config.github.key = Rails.application.credentials.dig(:github, :key)
+    config.github.secret = Rails.application.credentials.dig(:github, :secret)
+    config.github.callback_url = Rails.application.credentials.dig(:github, :callback_url)
+    config.github.user_info_mapping = { email: 'email', github_name: 'login',
+                                        remote_avatar_url: 'avatar_url' }
+    config.github.scope = 'user:email'
+  else
+  # production
+    config.external_providers = [:github]
+    config.github.key = Rails.application.credentials.dig(:github, :production_key)
+    config.github.secret = Rails.application.credentials.dig(:github, :production_secret)
+    config.github.callback_url = Rails.application.credentials.dig(:github, :production_callback_url)
+    config.github.user_info_mapping = { email: 'email', github_name: 'login',
+                                        remote_avatar_url: 'avatar_url' }
+    config.github.scope = 'user:email'
+  end
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.
