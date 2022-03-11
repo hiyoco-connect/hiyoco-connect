@@ -11,15 +11,17 @@
           <li class="nav-item">
             <%= link_to (t 'defaults.profiles_all'), profiles_path, class: "nav-link active text-dark" %>
           </li>
-        <%if current_user.profile.present?%>
+
+        <% if current_user.profile.present? && current_user.profile.persisted? %>
           <li class="nav-item">
             <%= link_to (t 'defaults.myprofile'), profile_path(current_user.profile.id), class: "nav-link active text-dark" %>
           </li>
-        <%else%>
+        <% else %>
           <li class="nav-item">
             <%= link_to (t 'defaults.profile_new'), new_profile_path, class: "nav-link active text-dark"%>
           </li>
-        <%end%>
+        <% end %> 
+
           <li class="nav-item">
             <%= link_to (t 'defaults.like'), likes_profiles_path, class: "nav-link active text-dark" %>
           </li>
