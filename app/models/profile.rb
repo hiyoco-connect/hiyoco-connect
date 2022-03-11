@@ -32,6 +32,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
   has_many :portfolios, dependent: :destroy
+  has_many :likes, dependent: :destroy
   accepts_nested_attributes_for :portfolios, reject_if: proc { |attributes|
                                                           attributes['name'].blank?
                                                         }
