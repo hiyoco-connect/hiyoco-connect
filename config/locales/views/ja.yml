@@ -45,6 +45,7 @@ ja:
     likes:
       connect: 'コネクトしたユーザー'
       like: 'いいね！したユーザー'
+      passive_like: 'いいね！してくれたユーザー'
       connect_profile_not_found_message: 'まだコネクトしていません…'
       like_profile_not_found_message: 'まだいいね！していません…'
   shared:
