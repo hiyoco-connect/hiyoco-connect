@@ -13,6 +13,10 @@
       <% else %>
         <p><%= t '.like_profile_not_found_message' %></p>
       <% end %>
+      <% if current_user.profile.present? && @passive_liked_profiles.present?%>
+        <h2>いいね！してくれたユーザー</h2>
+        <%= render @passive_liked_profiles %>
+      <% end %>
     </div>
   </div>
 </div>

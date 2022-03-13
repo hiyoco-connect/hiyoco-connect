@@ -1,4 +1,4 @@
-# == Schema Information
+# == Schema Info
 #
 # Table name: users
 #
@@ -21,8 +21,6 @@ class User < ApplicationRecord
   has_many :authentications, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_profiles, through: :likes, source: :profile
-  has_many :passive_likes, class_name: 'Like', foreign_key: 'profile_id',
-                           inverse_of: 'profile', dependent: :destroy
 
   has_one :profile, dependent: :destroy
 
@@ -46,5 +44,13 @@ class User < ApplicationRecord
 
   def connect
     Profile.where(id: liked_profiles.select(:profile_id)).where(id: passive_likes.select(:user_id))
+  end
+
+  def passive_likes
+    Like.where(profile_id: profile.id)
+  end
+
+  def passive_liked_profiles
+    Profile.where(id: passive_likes.select(:user_id))
   end
 end
