@@ -37,4 +37,3 @@ yarn-debug.log*
 .yarn-integrity
 #Ignore abundant files
 .DS_Store
-.env

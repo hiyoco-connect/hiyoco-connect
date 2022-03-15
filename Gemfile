@@ -76,7 +76,6 @@ gem 'rinku'
 gem 'seed-fu'
 
 # S3
-gem 'dotenv-rails'
 gem 'fog-aws'
 
 # paginaton
