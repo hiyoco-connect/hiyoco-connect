@@ -39,7 +39,8 @@ class ProfilesController < ApplicationController
 
   def destroy
     current_user.profile.destroy
-    redirect_to profiles_path, success: t('defaults.messages.deleted', item: Profile.model_name.human)
+    redirect_to profiles_path,
+                success: t('defaults.messages.deleted', item: Profile.model_name.human)
   end
 
   def likes
