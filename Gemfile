@@ -75,6 +75,9 @@ gem 'ransack'
 gem 'rinku'
 gem 'seed-fu'
 
+# S3
+gem 'fog-aws'
+
 # paginaton
 gem 'bootstrap5-kaminari-views'
 gem 'kaminari'
