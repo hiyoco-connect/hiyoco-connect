@@ -47,7 +47,7 @@ class User < ApplicationRecord
   end
 
   def passive_likes
-    Like.where(profile_id: profile.id)
+    Like.where(profile_id: profile&.id)
   end
 
   def passive_liked_profiles
