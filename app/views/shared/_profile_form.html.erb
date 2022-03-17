@@ -105,7 +105,7 @@
     </div>
 
     <div class="col-6 col-lg-5">
-      <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
+      <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: '未回答' }, { class: 'form-control text-center pulldown' } %>
     </div>
 
     <div class="col-2 col-lg-1"></div>
@@ -118,7 +118,7 @@
     </div>
 
     <div class="col-6 col-lg-5">
-      <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, {}, { class: 'form-control text-center pulldown' } %>
+      <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: '未回答' }, { class: 'form-control text-center pulldown' } %>
     </div>
 
     <div class="col-2 col-lg-1"></div>
