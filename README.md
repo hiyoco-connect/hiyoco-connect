@@ -17,7 +17,7 @@
 | --------- | --------- |
 | ![プロフィール作成](https://user-images.githubusercontent.com/84756197/158815123-3b45b6c8-ef1f-4080-b8dc-089d15917e90.png) | ![マイプロフィール](https://user-images.githubusercontent.com/84756197/158815311-4cb04708-79f5-4d66-8190-d6c2e89692f9.png) |
  
-| プロフィール検索 | いいね一覧 |
+| プロフィール検索 | コネクト・いいね！一覧 |
 | --------- | --------- |
 | ![localhost_3000_profiles_search](https://user-images.githubusercontent.com/84756197/158815813-07301919-51c3-48f6-9f9f-e96d05eadddb.png) | ![localhost_3000_profiles_likes (1)](https://user-images.githubusercontent.com/84756197/158816063-695849d7-1930-44f2-8884-07b13385c3fd.png) |
 
