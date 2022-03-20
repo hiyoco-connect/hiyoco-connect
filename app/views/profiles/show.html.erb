@@ -42,7 +42,7 @@
       <div class="fw-bold form-label">自己紹介文</div>
 
       <div class="form-control">
-        <%= raw Rinku.auto_link(h(simple_format(@profile.self_introduce)), :all, 'target="_blank" rel="noopener noreferrer" class="text-decoration-none link-light"') %>
+        <%= raw Rinku.auto_link(h(sanitize(simple_format(@profile.self_introduce))), :all, 'target="_blank" rel="noopener noreferrer" class="text-decoration-none link-light"') %>
       </div>
     </div>
   </div>
