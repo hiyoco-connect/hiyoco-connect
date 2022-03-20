@@ -42,7 +42,7 @@
       <div class="fw-bold form-label">自己紹介文</div>
 
       <div class="form-control">
-        <%= simple_format(@profile.self_introduce) %>
+        <%= raw Rinku.auto_link(h(simple_format(@profile.self_introduce)), :all, 'target="_blank" rel="noopener noreferrer" class="text-decoration-none link-light"') %>
       </div>
     </div>
   </div>
@@ -235,9 +235,9 @@
         <div class="col-6 col-lg-5">
           <div class="text-center form-control">
             <%if pf.url.present?%>
-              <%= pf.url %>
+              <%= link_to pf.url, h(sanitize(pf.url)),  target: :_blank, rel: "noopener noreferrer", class: "text-decoration-none link-light" %>
             <%else%>
-              <%= t('defaults.not_answered')%>
+            <%= t('defaults.not_answered')%>
             <%end%>
           </div>
         </div>
