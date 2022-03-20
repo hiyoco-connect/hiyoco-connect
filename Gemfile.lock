@@ -125,6 +125,7 @@ GEM
       activesupport (>= 3.0.0)
     erubi (1.10.0)
     erubis (2.7.0)
+    excon (0.92.0)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
     faraday (1.9.3)
@@ -151,6 +152,22 @@ GEM
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
     ffi (1.15.5)
+    fog-aws (3.13.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+    fog-core (2.3.0)
+      builder
+      excon (~> 0.71)
+      formatador (>= 0.2, < 2.0)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-xml (0.1.4)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+    formatador (1.1.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.9.1)
@@ -187,6 +204,9 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
@@ -385,6 +405,7 @@ DEPENDENCIES
   draper
   enum_help
   faker
+  fog-aws
   jbuilder (~> 2.7)
   jp_prefecture
   kaminari
