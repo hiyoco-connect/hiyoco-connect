@@ -237,7 +237,7 @@
             <%if pf.url.present?%>
               <%= link_to pf.url, h(sanitize(pf.url)),  target: :_blank, rel: "noopener noreferrer", class: "text-decoration-none link-light" %>
             <%else%>
-            <%= t('defaults.not_answered')%>
+              <%= t('defaults.not_answered')%>
             <%end%>
           </div>
         </div>
