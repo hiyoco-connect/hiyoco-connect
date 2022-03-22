@@ -1,10 +1,10 @@
 <div class="container my-5">
 
   <div class="row justify-content-center mb-5">
-    <div class="col-4 text-center">
+    <div class="col-11 col-md-4 text-center">
       <!-- プロフィール画像 -->
       <div>
-        <%=image_tag @profile.decorate.avatar_url, class: 'rounded-circle img-fluid', size: '200x200' %> 
+        <%=image_tag @profile.decorate.avatar_url, class: 'rounded-circle img-fluid', size: '200x200' %>
       </div>
 
       <!-- 期 -->
@@ -38,7 +38,7 @@
     </div>
 
     <!-- 自己紹介文 -->
-    <div class="col-6">
+    <div class="col-11 col-md-6 mt-3">
       <div class="fw-bold form-label">自己紹介文</div>
 
       <div class="form-control">

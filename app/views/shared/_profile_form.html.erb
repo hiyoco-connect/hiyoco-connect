@@ -1,7 +1,7 @@
 <%= form_with( model: profile, builder: ProfilesHelper::ProfileFormHelper ,local: true) do |f| %>
   <div class="row mb-5 justify-content-center">
     <!-- プロフィール画像 -->
-    <div class="col-4">
+    <div class="col-8 col-md-4 mb-3">
       <span class="text-danger">
         <% if profile.errors.include?(:avatar) %>
           <%= profile.errors.full_messages_for(:avatar).first %>
@@ -15,7 +15,7 @@
     </div>
 
     <!-- 自己紹介文 -->
-    <div class="col-6 col-lg-5">
+    <div class="col-8 col-md-6 col-lg-5">
       <span class="text-danger">
         <% if profile.errors.include?(:self_introduce) %>
           <%= profile.errors.full_messages_for(:self_introduce).first %>
@@ -25,7 +25,7 @@
       <div class="fw-bold form-label">
         <%= f.label :self_introduce %><span class="text-danger">*</span>
       </div>
-      <%= f.text_area :self_introduce, rows: 10, class: 'form-control', placeholder: '特徴的な自己紹介を書くといいかも！' %> 
+      <%= f.text_area :self_introduce, rows: 10, class: 'form-control', placeholder: '特徴的な自己紹介を書くといいかも！' %>
     </div>
 
   </div>
@@ -45,7 +45,7 @@
         <% end %>
       </span>
 
-      <%= f.text_field :name, class: 'form-control text-center', placeholder: '例) ひよこ太郎' %> 
+      <%= f.text_field :name, class: 'form-control text-center', placeholder: '例) ひよこ太郎' %>
     </div>
 
     <div class="col-2 col-lg-1"></div>
@@ -223,7 +223,7 @@
   <%= f.fields_for :portfolios do |t| %>
     <%= render 'profiles/portfolio_fields', f: t, profile: profile %>
   <% end %>
-  
+
   <!-- ポートフォリオ入力欄の追加ボタン -->
   <div class="row justify-content-center mb-5">
     <div id="detail-association-insertion-point"></div>
@@ -244,4 +244,4 @@
       <%= f.submit class: 'btn btn-success' %>
     </div>
   </div>
-<% end %> 
+<% end %>
